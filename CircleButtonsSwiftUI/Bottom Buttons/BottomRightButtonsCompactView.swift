@@ -52,261 +52,190 @@ struct BottomRightButtonsCompactView: View {
 
                 if rotationButtons.showRotationButtons {
 
+                    Group {
 
-                    //
-                    // Button for Pitching up.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for Pitching up.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.pitchUpButtonPressed.toggle()
+                                self.rotationButtons.pitchUpButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.up")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Hailing a ride."))
                         }
-
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.up")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Hailing a ride."))
-                    }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition0DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position0DegreeButtonCompact().x, y: CircleButtonHelper.position0DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition0DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position0DegreeButtonCompact().x, y: CircleButtonHelper.position0DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
 
-                    //
-                    // Button for rolling starboard.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for rolling starboard.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.rollStarboardButtonPressed.toggle()
+                                self.rotationButtons.rollStarboardButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.clockwise")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Rolling starboard."))
                         }
-
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.clockwise")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Rolling starboard."))
-                    }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition60DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position60DegreeButtonCompact().x, y: CircleButtonHelper.position60DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition60DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position60DegreeButtonCompact().x, y: CircleButtonHelper.position60DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
 
-                    //
-                    // Button for yawing starboard.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for yawing starboard.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.yawStarboardButtonPressed.toggle()
+                                self.rotationButtons.yawStarboardButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.right")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Yawing starboard."))
                         }
-
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.right")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Yawing starboard."))
-                    }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition120DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position120DegreeButtonCompact().x, y: CircleButtonHelper.position120DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition120DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position120DegreeButtonCompact().x, y: CircleButtonHelper.position120DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
 
-                    //
-                    // Button for pitching down.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for pitching down.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.pitchDownButtonPressed.toggle()
+                                self.rotationButtons.pitchDownButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.down")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Pitching down."))
                         }
-
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.down")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Pitching down."))
-                    }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition180DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position180DegreeButtonCompact().x, y: CircleButtonHelper.position180DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition180DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position180DegreeButtonCompact().x, y: CircleButtonHelper.position180DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
 
-                    //
-                    // Button for yawing port.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for yawing port.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.yawPortButtonPressed.toggle()
+                                self.rotationButtons.yawPortButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.left")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Yawing port."))
                         }
-
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.left")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Yawing port."))
-                    }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition240DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position240DegreeButtonCompact().x, y: CircleButtonHelper.position240DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition240DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position240DegreeButtonCompact().x, y: CircleButtonHelper.position240DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
 
-                    //
-                    // Button for rolling port.
-                    //
-                    Button( action: {
-                        withAnimation {
+                        //
+                        // Button for rolling port.
+                        //
+                        Button( action: {
+                            withAnimation {
 
-                            self.rotationButtons.yawPortButtonPressed.toggle()
+                                self.rotationButtons.yawPortButtonPressed.toggle()
 
+                            }
+
+                            // Code to do something goes here
+
+                        }) {
+                            Image(systemName: "arrow.counterclockwise")
+                                .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                                .imageScale(.large)
+                                .accessibility(label: Text("Rolling port."))
                         }
+                        .zIndex(2)
+                        .background(CircleButtonColor.offWithBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(CircleButtonHelper.transition300DegreeButtonCompact())
+                        .position(x: CircleButtonHelper.position300DegreeButtonCompact().x, y: CircleButtonHelper.position300DegreeButtonCompact().y)
+                        //.animation(.ripple(buttonIndex: 2))
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
-                        // Code to do something goes here
-
-                    }) {
-                        Image(systemName: "arrow.counterclockwise")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
-                            .imageScale(.large)
-                            .accessibility(label: Text("Rolling port."))
                     }
-                    .zIndex(2)
-                    .background(CircleButtonColor.offWithBackground.rawValue)
-                    //.background(Color.white.opacity(Double(CircleButton.secondaryOpacity.rawValue)))
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(CircleButtonHelper.transition300DegreeButtonCompact())
-                    .position(x: CircleButtonHelper.position300DegreeButtonCompact().x, y: CircleButtonHelper.position300DegreeButtonCompact().y)
-                    //.animation(.ripple(buttonIndex: 2))
                     .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
                 }
 
             }
             .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.widthHeightCompact.rawValue, alignment: .bottomTrailing)
-            //.background(Color.orange)
         }
         .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .bottomTrailing)
-        //.background(Color.red)
         .padding(.init(top: 5, leading: 5, bottom: 0, trailing: 5))
-    }
-
-
-
-    func move0DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: 0, y: CircleButton.diameterWithRadialSpacingCompact.rawValue)
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.opacity
-            .combined(with: .offset(x: 0, y: CircleButton.diameterWithRadialSpacingCompact.rawValue))
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
-    }
-
-
-
-    func move60DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: -( CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ) ), y: CircleButton.diameterWithRadialSpacingCompact.rawValue  * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.offset(x: -( CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ) ), y: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
-    }
-
-
-
-    func move120DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: -( CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0) ) ), y: -CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.offset(x: -( CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0) ) ), y: -CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
-    }
-
-
-
-    func move180DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: 0, y: -CircleButton.diameterWithRadialSpacingCompact.rawValue)
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.offset(x: 0, y: -CircleButton.diameterWithRadialSpacingCompact.rawValue)
-            .combined(with: .opacity)
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
-    }
-
-
-
-    func move240DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ), y: -CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ), y: -CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
-    }
-
-
-
-    func move300DegreeButton() -> AnyTransition {
-        let insertion   = AnyTransition.offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ), y: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        let removal     = AnyTransition.offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( cos( Double.pi / 6.0 ) ), y: CircleButton.diameterWithRadialSpacingCompact.rawValue * CGFloat( sin( Double.pi / 6.0 ) ) )
-            .combined(with: .opacity)
-
-        return AnyTransition.asymmetric(insertion: insertion, removal: removal)
     }
 }
 

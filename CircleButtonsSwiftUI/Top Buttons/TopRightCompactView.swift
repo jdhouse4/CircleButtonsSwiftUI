@@ -34,7 +34,6 @@ struct TopRightCompactView: View {
                 .zIndex(3)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
-                //.background(Capsule().stroke(lineWidth: 1))
                 .background(Capsule().stroke(Color.blue, lineWidth: 1))
 
 

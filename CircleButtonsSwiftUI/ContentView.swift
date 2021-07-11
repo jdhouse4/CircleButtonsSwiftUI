@@ -19,13 +19,9 @@ struct ContentView: View {
 
     @StateObject var cameraButtons                  = CameraButtons()
     @StateObject var settingsButtons                = SettingsButtons()
-    @StateObject var translationButtons             = TranslationButtons()
     @StateObject var devicesButton                  = DevicesButton()
+    @StateObject var translationButtons             = TranslationButtons()
     @StateObject var transportationButton           = RotationButtons()
-
-    @State private var aircraftButtonPressed: Bool  = false
-    @State private var pilotButtonPressed: Bool     = false
-    @State private var settingsButtonPressed: Bool  = false
 
 
 
@@ -38,13 +34,12 @@ struct ContentView: View {
 
             CircleButtonsViewsView()
                 .statusBar(hidden: true)
-                //.zIndex(2)
 
         }
         .environmentObject(cameraButtons)
         .environmentObject(settingsButtons)
-        .environmentObject(translationButtons)
         .environmentObject(devicesButton)
+        .environmentObject(translationButtons)
         .environmentObject(transportationButton)
     }
 }

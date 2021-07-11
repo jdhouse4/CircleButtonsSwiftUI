@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct TopViewCompact: View {
 
     var body: some View {

@@ -34,7 +34,6 @@ struct BottomView: View {
 
         }
         .frame(alignment: .bottom)
-        //.background(Color.yellow)
     }
 }
 

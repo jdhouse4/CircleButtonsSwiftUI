@@ -60,7 +60,6 @@ struct BottomCenterRisingCompactButton: View {
                 .frame(alignment: .trailing)
                 .zIndex(3)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
-                //.background(Color.white.opacity(Double(CircleButton.primaryOpacity.rawValue)))
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
                 .position(x: self.devicesButton.animateParentButton ? CircleButtonView.halfWidthHeightCompact.rawValue : CircleButtonView.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButtonView.centerButtonTopPositionCompact.rawValue : CircleButtonView.centerButtonBottomPositionCompact.rawValue)
@@ -69,6 +68,7 @@ struct BottomCenterRisingCompactButton: View {
 
 
                 if devicesButton.animateChildButtons {
+
                     Group {
 
                         //
@@ -91,7 +91,6 @@ struct BottomCenterRisingCompactButton: View {
                         }
                         .zIndex(2)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
-                        //.background(Color.white.opacity(Double(CircleButton.secondaryOpacity.rawValue)))
                         .clipShape(Circle())
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition60DegreeButtonCompact())
@@ -120,7 +119,6 @@ struct BottomCenterRisingCompactButton: View {
                         }
                         .zIndex(2)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
-                        //.background(Color.white.opacity(Double(CircleButton.secondaryOpacity.rawValue)))
                         .clipShape(Circle())
                         //.background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition180DegreeButtonCompact())
@@ -149,7 +147,6 @@ struct BottomCenterRisingCompactButton: View {
                         }
                         .zIndex(2)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
-                        //.background(Color.white.opacity(Double(CircleButton.secondaryOpacity.rawValue)))
                         .clipShape(Circle())
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition300DegreeButtonCompact())
@@ -157,16 +154,14 @@ struct BottomCenterRisingCompactButton: View {
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                     }
                     .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+
                 }
 
             }
             .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .top)
-            //.background(Color.purple)
 
         }
         .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .bottom)
-        //.background(Color.gray).opacity(0.3)
-        //.padding(.init(top: 5, leading: 0, bottom: 0, trailing: 0))
     }
 }
 

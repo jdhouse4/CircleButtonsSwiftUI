@@ -32,11 +32,11 @@
 		E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */; };
 		E6777674269B599F004BE5EB /* RotationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764D269B599E004BE5EB /* RotationButtons.swift */; };
 		E6777675269B599F004BE5EB /* TopRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764A269B599E004BE5EB /* TopRightView.swift */; };
-		E6777677269B599F004BE5EB /* AircraftCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777642269B599E004BE5EB /* AircraftCamera.swift */; };
 		E6777678269B599F004BE5EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777659269B599F004BE5EB /* CircleButton.swift */; };
 		E6777679269B599F004BE5EB /* BottomCenterRisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */; };
 		E677767A269B599F004BE5EB /* CameraButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777651269B599F004BE5EB /* CameraButtons.swift */; };
 		E677767B269B599F004BE5EB /* TopViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765B269B599F004BE5EB /* TopViewCompact.swift */; };
+		E6777681269B6065004BE5EB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6777680269B6065004BE5EB /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,6 @@
 		E677763A269B5928004BE5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6777640269B599E004BE5EB /* TopLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLeftView.swift; sourceTree = "<group>"; };
 		E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingCompactButton.swift; sourceTree = "<group>"; };
-		E6777642269B599E004BE5EB /* AircraftCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftCamera.swift; sourceTree = "<group>"; };
 		E6777644269B599E004BE5EB /* CircleButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonHelper.swift; sourceTree = "<group>"; };
 		E6777646269B599E004BE5EB /* DevicesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesButtons.swift; sourceTree = "<group>"; };
 		E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingButton.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		E677765B269B599F004BE5EB /* TopViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCompact.swift; sourceTree = "<group>"; };
 		E677765C269B599F004BE5EB /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		E677765D269B599F004BE5EB /* RippleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimation.swift; sourceTree = "<group>"; };
+		E6777680269B6065004BE5EB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,6 @@
 		E6777630269B5927004BE5EB /* CircleButtonsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				E6777642269B599E004BE5EB /* AircraftCamera.swift */,
 				E6777631269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift */,
 				E6777633269B5927004BE5EB /* ContentView.swift */,
 				E677764E269B599E004BE5EB /* CircleButtonsViewsView.swift */,
@@ -114,6 +113,7 @@
 				E677767F269B5BA8004BE5EB /* EnvironmentObject Files */,
 				E677767E269B5A4F004BE5EB /* CircleButton Files */,
 				E6777635269B5928004BE5EB /* Assets.xcassets */,
+				E6777680269B6065004BE5EB /* Media.xcassets */,
 				E677763A269B5928004BE5EB /* Info.plist */,
 				E6777637269B5928004BE5EB /* Preview Content */,
 			);
@@ -131,12 +131,12 @@
 		E677767C269B5A24004BE5EB /* Top Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				E6777640269B599E004BE5EB /* TopLeftView.swift */,
-				E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */,
-				E6777653269B599F004BE5EB /* TopRightCompactView.swift */,
-				E677764A269B599E004BE5EB /* TopRightView.swift */,
 				E6777654269B599F004BE5EB /* TopView.swift */,
 				E677765B269B599F004BE5EB /* TopViewCompact.swift */,
+				E6777640269B599E004BE5EB /* TopLeftView.swift */,
+				E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */,
+				E677764A269B599E004BE5EB /* TopRightView.swift */,
+				E6777653269B599F004BE5EB /* TopRightCompactView.swift */,
 			);
 			path = "Top Buttons";
 			sourceTree = "<group>";
@@ -144,16 +144,16 @@
 		E677767D269B5A32004BE5EB /* Bottom Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				E677765A269B599F004BE5EB /* BottomButtonsView.swift */,
-				E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */,
-				E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */,
-				E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */,
-				E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */,
-				E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */,
-				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
-				E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */,
 				E677765C269B599F004BE5EB /* BottomView.swift */,
 				E6777652269B599F004BE5EB /* BottomViewCompact.swift */,
+				E677765A269B599F004BE5EB /* BottomButtonsView.swift */,
+				E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */,
+				E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */,
+				E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */,
+				E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */,
+				E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */,
+				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
+				E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */,
 			);
 			path = "Bottom Buttons";
 			sourceTree = "<group>";
@@ -237,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6777639269B5928004BE5EB /* Preview Assets.xcassets in Resources */,
+				E6777681269B6065004BE5EB /* Media.xcassets in Resources */,
 				E6777636269B5928004BE5EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +253,6 @@
 				E6777675269B599F004BE5EB /* TopRightView.swift in Sources */,
 				E6777634269B5927004BE5EB /* ContentView.swift in Sources */,
 				E677767B269B599F004BE5EB /* TopViewCompact.swift in Sources */,
-				E6777677269B599F004BE5EB /* AircraftCamera.swift in Sources */,
 				E677766A269B599F004BE5EB /* BottomRightButtonsCompactView.swift in Sources */,
 				E6777665269B599F004BE5EB /* BottomRightButtonsView.swift in Sources */,
 				E677766B269B599F004BE5EB /* TopView.swift in Sources */,

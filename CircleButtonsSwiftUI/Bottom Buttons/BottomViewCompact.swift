@@ -27,7 +27,6 @@ struct BottomViewCompact: View {
 
         }
         .frame(alignment: .bottom)
-        //.background(Color.yellow)
     }
 }
 

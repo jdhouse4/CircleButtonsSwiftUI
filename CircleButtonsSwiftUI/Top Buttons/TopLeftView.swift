@@ -34,7 +34,6 @@ struct TopLeftView: View {
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
                 .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                //.background(Capsule().stroke(lineWidth: 1))
 
 
 
