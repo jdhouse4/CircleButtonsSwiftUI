@@ -11,6 +11,32 @@
 		E6777634269B5927004BE5EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777633269B5927004BE5EB /* ContentView.swift */; };
 		E6777636269B5928004BE5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6777635269B5928004BE5EB /* Assets.xcassets */; };
 		E6777639269B5928004BE5EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6777638269B5928004BE5EB /* Preview Assets.xcassets */; };
+		E677765E269B599F004BE5EB /* TranslationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764F269B599E004BE5EB /* TranslationButtons.swift */; };
+		E6777660269B599F004BE5EB /* SettingsButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764B269B599E004BE5EB /* SettingsButtons.swift */; };
+		E6777662269B599F004BE5EB /* CircleButtonsViewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764E269B599E004BE5EB /* CircleButtonsViewsView.swift */; };
+		E6777663269B599F004BE5EB /* TopLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777640269B599E004BE5EB /* TopLeftView.swift */; };
+		E6777664269B599F004BE5EB /* CircleButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777644269B599E004BE5EB /* CircleButtonHelper.swift */; };
+		E6777665269B599F004BE5EB /* BottomRightButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */; };
+		E6777666269B599F004BE5EB /* RippleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765D269B599F004BE5EB /* RippleAnimation.swift */; };
+		E6777667269B599F004BE5EB /* BottomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765A269B599F004BE5EB /* BottomButtonsView.swift */; };
+		E6777669269B599F004BE5EB /* DevicesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777646269B599E004BE5EB /* DevicesButtons.swift */; };
+		E677766A269B599F004BE5EB /* BottomRightButtonsCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */; };
+		E677766B269B599F004BE5EB /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777654269B599F004BE5EB /* TopView.swift */; };
+		E677766C269B599F004BE5EB /* BottomLeftButtonCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */; };
+		E677766D269B599F004BE5EB /* BottomButtonsViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */; };
+		E677766E269B599F004BE5EB /* BottomViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777652269B599F004BE5EB /* BottomViewCompact.swift */; };
+		E677766F269B599F004BE5EB /* TopLeftViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */; };
+		E6777670269B599F004BE5EB /* TopRightCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777653269B599F004BE5EB /* TopRightCompactView.swift */; };
+		E6777671269B599F004BE5EB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765C269B599F004BE5EB /* BottomView.swift */; };
+		E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */; };
+		E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */; };
+		E6777674269B599F004BE5EB /* RotationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764D269B599E004BE5EB /* RotationButtons.swift */; };
+		E6777675269B599F004BE5EB /* TopRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764A269B599E004BE5EB /* TopRightView.swift */; };
+		E6777677269B599F004BE5EB /* AircraftCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777642269B599E004BE5EB /* AircraftCamera.swift */; };
+		E6777678269B599F004BE5EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777659269B599F004BE5EB /* CircleButton.swift */; };
+		E6777679269B599F004BE5EB /* BottomCenterRisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */; };
+		E677767A269B599F004BE5EB /* CameraButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777651269B599F004BE5EB /* CameraButtons.swift */; };
+		E677767B269B599F004BE5EB /* TopViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765B269B599F004BE5EB /* TopViewCompact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +46,32 @@
 		E6777635269B5928004BE5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6777638269B5928004BE5EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E677763A269B5928004BE5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6777640269B599E004BE5EB /* TopLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLeftView.swift; sourceTree = "<group>"; };
+		E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingCompactButton.swift; sourceTree = "<group>"; };
+		E6777642269B599E004BE5EB /* AircraftCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftCamera.swift; sourceTree = "<group>"; };
+		E6777644269B599E004BE5EB /* CircleButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonHelper.swift; sourceTree = "<group>"; };
+		E6777646269B599E004BE5EB /* DevicesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesButtons.swift; sourceTree = "<group>"; };
+		E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingButton.swift; sourceTree = "<group>"; };
+		E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsViewCompact.swift; sourceTree = "<group>"; };
+		E677764A269B599E004BE5EB /* TopRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightView.swift; sourceTree = "<group>"; };
+		E677764B269B599E004BE5EB /* SettingsButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtons.swift; sourceTree = "<group>"; };
+		E677764D269B599E004BE5EB /* RotationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButtons.swift; sourceTree = "<group>"; };
+		E677764E269B599E004BE5EB /* CircleButtonsViewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonsViewsView.swift; sourceTree = "<group>"; };
+		E677764F269B599E004BE5EB /* TranslationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationButtons.swift; sourceTree = "<group>"; };
+		E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsView.swift; sourceTree = "<group>"; };
+		E6777651269B599F004BE5EB /* CameraButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtons.swift; sourceTree = "<group>"; };
+		E6777652269B599F004BE5EB /* BottomViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewCompact.swift; sourceTree = "<group>"; };
+		E6777653269B599F004BE5EB /* TopRightCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightCompactView.swift; sourceTree = "<group>"; };
+		E6777654269B599F004BE5EB /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonView.swift; sourceTree = "<group>"; };
+		E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonCompactView.swift; sourceTree = "<group>"; };
+		E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsCompactView.swift; sourceTree = "<group>"; };
+		E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLeftViewCompact.swift; sourceTree = "<group>"; };
+		E6777659269B599F004BE5EB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		E677765A269B599F004BE5EB /* BottomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsView.swift; sourceTree = "<group>"; };
+		E677765B269B599F004BE5EB /* TopViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCompact.swift; sourceTree = "<group>"; };
+		E677765C269B599F004BE5EB /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		E677765D269B599F004BE5EB /* RippleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +104,15 @@
 		E6777630269B5927004BE5EB /* CircleButtonsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E6777642269B599E004BE5EB /* AircraftCamera.swift */,
 				E6777631269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift */,
 				E6777633269B5927004BE5EB /* ContentView.swift */,
+				E677764E269B599E004BE5EB /* CircleButtonsViewsView.swift */,
+				E677767C269B5A24004BE5EB /* Top Buttons */,
+				E677767D269B5A32004BE5EB /* Bottom Buttons */,
+				E677765D269B599F004BE5EB /* RippleAnimation.swift */,
+				E677767F269B5BA8004BE5EB /* EnvironmentObject Files */,
+				E677767E269B5A4F004BE5EB /* CircleButton Files */,
 				E6777635269B5928004BE5EB /* Assets.xcassets */,
 				E677763A269B5928004BE5EB /* Info.plist */,
 				E6777637269B5928004BE5EB /* Preview Content */,
@@ -67,6 +126,57 @@
 				E6777638269B5928004BE5EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E677767C269B5A24004BE5EB /* Top Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E6777640269B599E004BE5EB /* TopLeftView.swift */,
+				E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */,
+				E6777653269B599F004BE5EB /* TopRightCompactView.swift */,
+				E677764A269B599E004BE5EB /* TopRightView.swift */,
+				E6777654269B599F004BE5EB /* TopView.swift */,
+				E677765B269B599F004BE5EB /* TopViewCompact.swift */,
+			);
+			path = "Top Buttons";
+			sourceTree = "<group>";
+		};
+		E677767D269B5A32004BE5EB /* Bottom Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E677765A269B599F004BE5EB /* BottomButtonsView.swift */,
+				E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */,
+				E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */,
+				E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */,
+				E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */,
+				E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */,
+				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
+				E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */,
+				E677765C269B599F004BE5EB /* BottomView.swift */,
+				E6777652269B599F004BE5EB /* BottomViewCompact.swift */,
+			);
+			path = "Bottom Buttons";
+			sourceTree = "<group>";
+		};
+		E677767E269B5A4F004BE5EB /* CircleButton Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6777659269B599F004BE5EB /* CircleButton.swift */,
+				E6777644269B599E004BE5EB /* CircleButtonHelper.swift */,
+			);
+			path = "CircleButton Files";
+			sourceTree = "<group>";
+		};
+		E677767F269B5BA8004BE5EB /* EnvironmentObject Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6777651269B599F004BE5EB /* CameraButtons.swift */,
+				E677764B269B599E004BE5EB /* SettingsButtons.swift */,
+				E6777646269B599E004BE5EB /* DevicesButtons.swift */,
+				E677764D269B599E004BE5EB /* RotationButtons.swift */,
+				E677764F269B599E004BE5EB /* TranslationButtons.swift */,
+			);
+			path = "EnvironmentObject Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +248,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6777660269B599F004BE5EB /* SettingsButtons.swift in Sources */,
+				E6777675269B599F004BE5EB /* TopRightView.swift in Sources */,
 				E6777634269B5927004BE5EB /* ContentView.swift in Sources */,
+				E677767B269B599F004BE5EB /* TopViewCompact.swift in Sources */,
+				E6777677269B599F004BE5EB /* AircraftCamera.swift in Sources */,
+				E677766A269B599F004BE5EB /* BottomRightButtonsCompactView.swift in Sources */,
+				E6777665269B599F004BE5EB /* BottomRightButtonsView.swift in Sources */,
+				E677766B269B599F004BE5EB /* TopView.swift in Sources */,
+				E6777674269B599F004BE5EB /* RotationButtons.swift in Sources */,
+				E6777667269B599F004BE5EB /* BottomButtonsView.swift in Sources */,
+				E6777679269B599F004BE5EB /* BottomCenterRisingButton.swift in Sources */,
+				E677766E269B599F004BE5EB /* BottomViewCompact.swift in Sources */,
+				E677766C269B599F004BE5EB /* BottomLeftButtonCompactView.swift in Sources */,
+				E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */,
+				E6777662269B599F004BE5EB /* CircleButtonsViewsView.swift in Sources */,
+				E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */,
+				E677766F269B599F004BE5EB /* TopLeftViewCompact.swift in Sources */,
+				E6777663269B599F004BE5EB /* TopLeftView.swift in Sources */,
 				E6777632269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift in Sources */,
+				E6777678269B599F004BE5EB /* CircleButton.swift in Sources */,
+				E6777669269B599F004BE5EB /* DevicesButtons.swift in Sources */,
+				E6777671269B599F004BE5EB /* BottomView.swift in Sources */,
+				E6777664269B599F004BE5EB /* CircleButtonHelper.swift in Sources */,
+				E6777670269B599F004BE5EB /* TopRightCompactView.swift in Sources */,
+				E6777666269B599F004BE5EB /* RippleAnimation.swift in Sources */,
+				E677767A269B599F004BE5EB /* CameraButtons.swift in Sources */,
+				E677765E269B599F004BE5EB /* TranslationButtons.swift in Sources */,
+				E677766D269B599F004BE5EB /* BottomButtonsViewCompact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
