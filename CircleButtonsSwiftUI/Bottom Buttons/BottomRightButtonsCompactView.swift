@@ -78,7 +78,7 @@ struct BottomRightButtonsCompactView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition0DegreeButtonCompact())
                         .position(x: CircleButtonHelper.position0DegreeButtonCompact().x, y: CircleButtonHelper.position0DegreeButtonCompact().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
@@ -107,7 +107,7 @@ struct BottomRightButtonsCompactView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition60DegreeButtonCompact())
                         .position(x: CircleButtonHelper.position60DegreeButtonCompact().x, y: CircleButtonHelper.position60DegreeButtonCompact().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 
@@ -136,7 +136,7 @@ struct BottomRightButtonsCompactView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition120DegreeButtonCompact())
                         .position(x: CircleButtonHelper.position120DegreeButtonCompact().x, y: CircleButtonHelper.position120DegreeButtonCompact().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 

@@ -77,7 +77,7 @@ struct BottomRightButtonsView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition0DegreeButton())
                         .position(x: CircleButtonHelper.position0DegreeButton().x, y: CircleButtonHelper.position0DegreeButton().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
                         
@@ -105,7 +105,7 @@ struct BottomRightButtonsView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition60DegreeButton())
                         .position(x: CircleButtonHelper.position60DegreeButton().x, y: CircleButtonHelper.position60DegreeButton().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
                         
@@ -134,7 +134,7 @@ struct BottomRightButtonsView: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition120DegreeButton())
                         .position(x: CircleButtonHelper.position120DegreeButton().x, y: CircleButtonHelper.position120DegreeButton().y)
-                        //.animation(.ripple(buttonIndex: 2))
+                        .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
                         

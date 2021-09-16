@@ -57,7 +57,7 @@ struct TopLeftViewCompact: View {
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 1))
                     .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue, y: 0)
-                    .animation(.ripple(buttonIndex: 1))
+                    //.animation(.ripple(buttonIndex: 1), value: cameraButtons.showCameraButtons)
 
 
                     Button(action: {
@@ -77,7 +77,7 @@ struct TopLeftViewCompact: View {
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 2))
                     .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * 2, y: 0)
-                    .animation(.ripple(buttonIndex: 2))
+                    //.animation(.ripple(buttonIndex: 2), value: cameraButtons.showCameraButtons)
                 }
             }
         }

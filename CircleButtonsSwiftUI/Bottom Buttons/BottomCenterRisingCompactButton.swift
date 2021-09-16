@@ -64,7 +64,7 @@ struct BottomCenterRisingCompactButton: View {
                 .clipShape(Circle())
                 .position(x: self.devicesButton.animateParentButton ? CircleButtonView.halfWidthHeightCompact.rawValue : CircleButtonView.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButtonView.centerButtonTopPositionCompact.rawValue : CircleButtonView.centerButtonBottomPositionCompact.rawValue)
                 .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
-                //.animation(.ripple(buttonIndex: 1))
+                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateButtons)
 
 
                 if devicesButton.animateChildButtons {
