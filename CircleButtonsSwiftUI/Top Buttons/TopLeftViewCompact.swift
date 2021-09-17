@@ -26,7 +26,7 @@ struct TopLeftViewCompact: View {
                         self.settingsButtons.showSettingsButtons = false
 
                     }
-                }) {
+                 }) {
                     Image(systemName: "video.fill")
                         .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
                         .imageScale(.large)
@@ -46,6 +46,7 @@ struct TopLeftViewCompact: View {
                         self.doSomething()
                         self.cameraButtons.aircraftCameraButtonPressed.toggle()
                         print("Aircraft button pressed is \(cameraButtons.aircraftCameraButtonPressed) in \(#file) \(#function)")
+
                     }) {
                         Image(systemName: "airplane")
                             .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
@@ -57,7 +58,8 @@ struct TopLeftViewCompact: View {
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 1))
                     .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue, y: 0)
-                    //.animation(.ripple(buttonIndex: 1), value: cameraButtons.showCameraButtons)
+                    //.animation(.ripple(buttonIndex: 1)/*, value: cameraButtons.showCameraButtons*/)
+
 
 
                     Button(action: {
@@ -79,6 +81,7 @@ struct TopLeftViewCompact: View {
                     .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * 2, y: 0)
                     //.animation(.ripple(buttonIndex: 2), value: cameraButtons.showCameraButtons)
                 }
+
             }
         }
         .padding(.init(top: 5, leading: 5, bottom: 5, trailing: 5))
