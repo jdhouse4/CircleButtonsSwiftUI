@@ -19,7 +19,7 @@ struct TopRightCompactView: View {
         HStack(spacing: 5) {
             ZStack (alignment: .center) {
                 Button(action: {
-                    withAnimation(.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))) {
+                    withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
 
                         self.settingsButtons.showSettingsButtons.toggle()
                         self.cameraButtons.showCameraButtons = false

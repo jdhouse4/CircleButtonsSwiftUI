@@ -14,6 +14,8 @@ struct BottomCenterRisingCompactButton: View {
 
     @EnvironmentObject var devicesButton: DevicesButton
 
+    @State private var childButtonAnimation: Bool = true
+
 
     var body: some View {
 
@@ -27,7 +29,7 @@ struct BottomCenterRisingCompactButton: View {
                         if self.devicesButton.animateButtons == false {
                             print("Deploying main button")
 
-                            self.devicesButton.animateParentButton = true
+                            self.devicesButton.animateParentButton.toggle()// = true
 
                             DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
                                 print("Deploying device buttons")
@@ -39,12 +41,13 @@ struct BottomCenterRisingCompactButton: View {
                         // Retract Buttons
                         if self.devicesButton.animateButtons == true {
                             print("Retracting device buttons")
+
                             self.devicesButton.animateChildButtons.toggle()
 
                             DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
                                 print("Retracting main button")
 
-                                self.devicesButton.animateParentButton = false
+                                self.devicesButton.animateParentButton.toggle()// = false
                             }
 
                         }
@@ -63,8 +66,7 @@ struct BottomCenterRisingCompactButton: View {
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
                 .position(x: self.devicesButton.animateParentButton ? CircleButtonView.halfWidthHeightCompact.rawValue : CircleButtonView.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButtonView.centerButtonTopPositionCompact.rawValue : CircleButtonView.centerButtonBottomPositionCompact.rawValue)
-                .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
-                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateButtons)
+                .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateParentButton) // Animation for falling main button.
 
 
                 if devicesButton.animateChildButtons {
@@ -153,7 +155,7 @@ struct BottomCenterRisingCompactButton: View {
                         .position(x: CircleButtonHelper.position300DegreeRisingButtonCompact().x, y: CircleButtonHelper.position300DegreeRisingButtonCompact().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                     }
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0)/*, value: devicesButton.animateButtons*/)
 
                 }
 

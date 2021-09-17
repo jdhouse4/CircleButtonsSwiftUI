@@ -36,7 +36,7 @@ struct BottomCenterRisingButton: View {
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
                 .position(x: CircleButtonHelper.positionMainButton().x, y: CircleButtonHelper.positionMainButton().y)
-                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
+                //.animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
 
                 if devicesButton.animateChildButtons {
 
@@ -66,7 +66,7 @@ struct BottomCenterRisingButton: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition60DegreeButton())
                         .position(x: CircleButtonHelper.position60DegreeButton().x, y: CircleButtonHelper.position60DegreeButton().y)
-                        .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
                         //
@@ -93,7 +93,7 @@ struct BottomCenterRisingButton: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition180DegreeButton())
                         .position(x: CircleButtonHelper.position180DegreeButton().x, y: CircleButtonHelper.position180DegreeButton().y)
-                        .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
 
@@ -121,7 +121,7 @@ struct BottomCenterRisingButton: View {
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition300DegreeButton())
                         .position(x: CircleButtonHelper.position300DegreeButton().x, y: CircleButtonHelper.position300DegreeButton().y)
-                        .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
+                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
                     }
                     .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
