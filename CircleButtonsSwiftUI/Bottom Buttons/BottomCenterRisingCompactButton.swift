@@ -23,7 +23,7 @@ struct BottomCenterRisingCompactButton: View {
 
             ZStack {
                 Button(action: {
-                    withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
+                    //withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
 
                         // Deploy buttons
                         if self.devicesButton.animateButtons == false {
@@ -54,7 +54,7 @@ struct BottomCenterRisingCompactButton: View {
 
                         self.devicesButton.animateButtons.toggle()
 
-                    }
+                    //}
                 }) {
                     Image(systemName: "network")
                         .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
@@ -66,8 +66,8 @@ struct BottomCenterRisingCompactButton: View {
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
                 .position(x: self.devicesButton.animateParentButton ? CircleButtonView.halfWidthHeightCompact.rawValue : CircleButtonView.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButtonView.centerButtonTopPositionCompact.rawValue : CircleButtonView.centerButtonBottomPositionCompact.rawValue)
-                .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateParentButton) // Animation for falling main button.
-
+                //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateParentButton) // Animation for falling main button.
+                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
                 if devicesButton.animateChildButtons {
 
@@ -155,13 +155,14 @@ struct BottomCenterRisingCompactButton: View {
                         .position(x: CircleButtonHelper.position300DegreeRisingButtonCompact().x, y: CircleButtonHelper.position300DegreeRisingButtonCompact().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                     }
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0)/*, value: devicesButton.animateButtons*/)
+                    //.animation(.easeInOut(duration: Double( CircleButton.animationSlow.rawValue) ).delay(0.0)/*, value: devicesButton.animateChildButtons*/)
 
                 }
 
             }
             .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .top)
-
+            //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
+            .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
         }
         .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .bottom)
     }
