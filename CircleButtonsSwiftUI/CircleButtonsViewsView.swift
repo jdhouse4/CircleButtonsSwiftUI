@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CircleButtonsViewsView: View {
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-
+    
     static let tag: String?  = "4Views"
 
 
