@@ -39,11 +39,8 @@ enum CircleButton: CGFloat {
     case animationDebug                     = 1.5
     case animationSlow                      = 0.4
     case animationFast                      = 0.25
-}
 
 
-
-enum CircleButtonView: CGFloat {
     // Regular Screen
     case extendedHeight                     = 250
     case widthHeight                        = 200
@@ -59,7 +56,6 @@ enum CircleButtonView: CGFloat {
     case centerButtonTopPositionCompact     = 53
     case centerButtonBottomPositionCompact  = 165
 }
-
 
 
 
