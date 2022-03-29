@@ -28,11 +28,15 @@ struct TopLeftViewCompact: View {
                     }
                  }) {
                     Image(systemName: "video.fill")
-                        .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                        /*.frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)*/
                         .imageScale(.large)
                 }
-                .frame(alignment: .leading)
+                //.frame(alignment: .leading)
                 .zIndex(3)
+                .frame(
+                    width: CircleButton.diameterCompact.rawValue,
+                    height: CircleButton.diameterCompact.rawValue,
+                    alignment: .center)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
                 .background(Capsule().stroke(Color.blue, lineWidth: 1))
@@ -49,15 +53,21 @@ struct TopLeftViewCompact: View {
 
                     }) {
                         Image(systemName: "airplane")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                            
                             .imageScale(.large)
                     }
                     .zIndex(2)
+                    .frame(
+                        width: CircleButton.diameterCompact.rawValue,
+                        height: CircleButton.diameterCompact.rawValue,
+                        alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 1))
-                    .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue, y: 0)
+                    .offset(
+                        x: CircleButton.diameterWithRadialSpacingCompact.rawValue,
+                        y: 0)
                     //.animation(.ripple(buttonIndex: 1)/*, value: cameraButtons.showCameraButtons*/)
 
 
@@ -70,15 +80,21 @@ struct TopLeftViewCompact: View {
 
                     }) {
                         Image(systemName: "person.fill")
-                            .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                            
                             .imageScale(.large)
                     }
                     .zIndex(1)
+                    .frame(
+                        width: CircleButton.diameterCompact.rawValue,
+                        height: CircleButton.diameterCompact.rawValue,
+                        alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 2))
-                    .offset(x: CircleButton.diameterWithRadialSpacingCompact.rawValue * 2, y: 0)
+                    .offset(
+                        x: CircleButton.diameterWithRadialSpacingCompact.rawValue * 2,
+                        y: 0)
                     //.animation(.ripple(buttonIndex: 2), value: cameraButtons.showCameraButtons)
                 }
 
@@ -93,7 +109,9 @@ struct TopLeftViewCompact: View {
         let insertion   = AnyTransition.move(edge: .leading)
             .combined(with: .opacity)
 
-        let removal     = AnyTransition.offset(x: -CircleButton.diameterCompact.rawValue * CGFloat(buttonIndex), y: 0)
+        let removal     = AnyTransition.offset(
+            x: -CircleButton.diameterCompact.rawValue * CGFloat(buttonIndex),
+            y: 0)
             .combined(with: .opacity)
 
         return AnyTransition.asymmetric(insertion: insertion, removal: removal)

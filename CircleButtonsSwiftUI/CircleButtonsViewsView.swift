@@ -17,25 +17,15 @@ struct CircleButtonsViewsView: View {
     var body: some View {
 
         VStack {
-
-            if horizontalSizeClass == .compact || verticalSizeClass == .compact {
-
-                TopViewCompact()
-
-                Spacer(minLength: 20)
-
-                BottomViewCompact()
-
-            } else {
-
-                TopView()
-
-
-                Spacer(minLength: 20)
-
-
-                BottomView()
-            }
+            
+            TopView()
+            
+            
+            Spacer(minLength: 20)
+            
+            
+            BottomView()
+            
         }
         //.background(Color(#colorLiteral(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)))
     }

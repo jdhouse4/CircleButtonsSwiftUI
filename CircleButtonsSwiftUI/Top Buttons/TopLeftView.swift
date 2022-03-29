@@ -11,6 +11,9 @@ import SwiftUI
 
 
 struct TopLeftView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+
     @EnvironmentObject var cameraButtons: CameraButtons
 
 
@@ -26,11 +29,15 @@ struct TopLeftView: View {
                     }
                 }) {
                     Image(systemName: "video.fill")
-                        .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
+                        /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                         .imageScale(.large)
                 }
-                .frame(alignment: .leading)
+                //.frame(alignment: .leading)
                 .zIndex(3)
+                .frame(
+                    width: CircleButton.diameter.rawValue,
+                    height: CircleButton.diameter.rawValue,
+                    alignment: .center)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
                 .background(Capsule().stroke(Color.blue, lineWidth: 1))
@@ -46,15 +53,21 @@ struct TopLeftView: View {
                         print("Aircraft button pressed is \(cameraButtons.aircraftCameraButtonPressed) in \(#file) \(#function)")
                     }) {
                         Image(systemName: "airplane")
-                            .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
+                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(2)
+                    .frame(
+                        width: CircleButton.diameter.rawValue,
+                        height: CircleButton.diameter.rawValue,
+                        alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 1))
-                    .offset(x: CircleButton.diameterWithRadialSpacing.rawValue, y: 0)
+                    .offset(
+                        x: CircleButton.diameterWithRadialSpacing.rawValue,
+                        y: 0)
                     //.animation(.ripple(buttonIndex: 1))
 
 
@@ -66,15 +79,21 @@ struct TopLeftView: View {
 
                     }) {
                         Image(systemName: "person.fill")
-                            .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
+                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(1)
+                    .frame(
+                        width: CircleButton.diameter.rawValue,
+                        height: CircleButton.diameter.rawValue,
+                        alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 2))
-                    .offset(x: CircleButton.diameterWithRadialSpacing.rawValue * 2, y: 0)
+                    .offset(
+                        x: CircleButton.diameterWithRadialSpacing.rawValue * 2,
+                        y: 0)
                     //.animation(.ripple(buttonIndex: 2))
                 }
             }
@@ -88,7 +107,9 @@ struct TopLeftView: View {
         let insertion   = AnyTransition.move(edge: .leading)
             .combined(with: .opacity)
 
-        let removal     = AnyTransition.offset(x: -CircleButton.diameter.rawValue * CGFloat(buttonIndex), y: 0)
+        let removal     = AnyTransition.offset(
+            x: -CircleButton.diameter.rawValue * CGFloat(buttonIndex),
+            y: 0)
             .combined(with: .opacity)
 
         return AnyTransition.asymmetric(insertion: insertion, removal: removal)
