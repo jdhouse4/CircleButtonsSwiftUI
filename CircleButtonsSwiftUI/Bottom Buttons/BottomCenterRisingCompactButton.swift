@@ -65,7 +65,7 @@ struct BottomCenterRisingCompactButton: View {
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
-                .position(x: self.devicesButton.animateParentButton ? CircleButtonView.halfWidthHeightCompact.rawValue : CircleButtonView.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButtonView.centerButtonTopPositionCompact.rawValue : CircleButtonView.centerButtonBottomPositionCompact.rawValue)
+                .position(x: self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue)
                 //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateParentButton) // Animation for falling main button.
                 .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
@@ -160,11 +160,11 @@ struct BottomCenterRisingCompactButton: View {
                 }
 
             }
-            .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .top)
+            .frame(width: CircleButton.widthHeightCompact.rawValue, height: CircleButton.extendedHeightCompact.rawValue, alignment: .top)
             //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
             .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
         }
-        .frame(width: CircleButtonView.widthHeightCompact.rawValue, height: CircleButtonView.extendedHeightCompact.rawValue, alignment: .bottom)
+        .frame(width: CircleButton.widthHeightCompact.rawValue, height: CircleButton.extendedHeightCompact.rawValue, alignment: .bottom)
     }
 }
 

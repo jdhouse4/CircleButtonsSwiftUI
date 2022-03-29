@@ -22,7 +22,12 @@ enum CircleButton: CGFloat {
     case cornerRadius                       = 28
     case spacer                             = 2
     case radialSpacer                       = 4
+    case extendedHeight                     = 250
+    case widthHeight                        = 200
+    case halfWidthHeight                    = 100
+    case buttonBottonPosition               = 170
 
+    
     // Compact Screen
     case diameterCompact                    = 50
     case diameterWithSpacingCompact         = 52
@@ -30,11 +35,20 @@ enum CircleButton: CGFloat {
     case radiusCompact                      = 25
     case radiusWithSpacingCompact           = 27
     case radiusWithRadialSpacingCompact     = 29
+    case extendedHeightCompact              = 190
+    case innerExtendedHeightCompact         = 95
+    case widthHeightCompact                 = 160
+    case halfWidthHeightCompact             = 80
+    case quarterExtendedHeightCompact       = 85
+    case centerButtonTopPositionCompact     = 53
+    case centerButtonBottomPositionCompact  = 165
 
+    
     // Colors
     case primaryOpacity                     = 0.5
     case secondaryOpacity                   = 0.3
 
+    
     // Animation Speed
     case animationDebug                     = 1.5
     case animationSlow                      = 0.4

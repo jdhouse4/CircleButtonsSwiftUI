@@ -24,7 +24,7 @@ struct BottomRightButtonsView: View {
                     .fill(CircleButtonColor.background.rawValue)
                     .zIndex(-1)
                     .clipShape(Circle())
-                    .position(x: CircleButtonView.halfWidthHeight.rawValue, y: CircleButtonView.halfWidthHeight.rawValue)
+                    .position(x: CircleButton.halfWidthHeight.rawValue, y: CircleButton.halfWidthHeight.rawValue)
 
 
 
@@ -230,10 +230,10 @@ struct BottomRightButtonsView: View {
                 }
 
             }
-            .frame(width: CircleButtonView.widthHeight.rawValue, height: CircleButtonView.widthHeight.rawValue, alignment: .bottomTrailing)
+            .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.widthHeight.rawValue, alignment: .bottomTrailing)
 
         }
-        .frame(width: CircleButtonView.widthHeight.rawValue, height: CircleButtonView.extendedHeight.rawValue, alignment: .bottomTrailing)
+        .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.extendedHeight.rawValue, alignment: .bottomTrailing)
         .padding(.init(top: 5, leading: 5, bottom: 5, trailing: 5))
 
     }
