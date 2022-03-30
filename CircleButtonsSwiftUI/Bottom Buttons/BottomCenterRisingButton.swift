@@ -59,7 +59,13 @@ struct BottomCenterRisingButton: View {
                         withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
 
                             self.devicesButton.animateChildButtons.toggle()
+                            print("Non compact dispaly, animateChildButtons: \(self.devicesButton.animateChildButtons)")
+                            
+                            self.devicesButton.animateParentButton.toggle()
+                            print("Non compact dispaly, animateParentButton: \(self.devicesButton.animateParentButton)")
 
+                            self.devicesButton.animateButtons.toggle()
+                            print("Non compact dispaly, animateButtons: \(self.devicesButton.animateButtons)\n")
                         }
                     }
                 }) {
@@ -71,7 +77,6 @@ struct BottomCenterRisingButton: View {
                     width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                     height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                     alignment: .center)
-                //.frame(alignment: .trailing)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .background(Circle().stroke(lineWidth: 2))
                 .clipShape(Circle())
