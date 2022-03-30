@@ -15,28 +15,32 @@ struct TopLeftView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     @EnvironmentObject var cameraButtons: CameraButtons
+    @EnvironmentObject var settingsButtons: SettingsButtons
 
 
     var body: some View {
 
         HStack(spacing: 5) {
             ZStack (alignment: .center) {
+                
                 Button(action: {
                     withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
 
                         self.cameraButtons.showCameraButtons.toggle()
+                        
+                        if horizontalSizeClass == .compact {
+                            self.settingsButtons.showSettingsButtons = false
+                        }
 
                     }
                 }) {
                     Image(systemName: "video.fill")
-                        /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                         .imageScale(.large)
                 }
-                //.frame(alignment: .leading)
                 .zIndex(3)
                 .frame(
-                    width: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                    height: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                     alignment: .center)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
@@ -58,15 +62,15 @@ struct TopLeftView: View {
                     }
                     .zIndex(2)
                     .frame(
-                        width: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                         alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 1))
                     .offset(
-                        x: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue : CircleButton.diameterWithRadialSpacing.rawValue,
+                        x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue : CircleButton.diameterWithRadialSpacing.rawValue,
                         y: 0)
                     //.animation(.ripple(buttonIndex: 1))
 
@@ -84,15 +88,15 @@ struct TopLeftView: View {
                     }
                     .zIndex(1)
                     .frame(
-                        width: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                         alignment: .center)
                     .background(CircleButtonColor.offWithoutBackground.rawValue)
                     .clipShape(Circle())
                     .background(Capsule().stroke(Color.blue, lineWidth: 1))
                     .transition(moveAndFade(buttonIndex: 2))
                     .offset(
-                        x: horizontalSizeClass == .compact || verticalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 : CircleButton.diameterWithRadialSpacing.rawValue * 2,
+                        x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 : CircleButton.diameterWithRadialSpacing.rawValue * 2,
                         y: 0)
                     //.animation(.ripple(buttonIndex: 2))
                 }
@@ -108,8 +112,7 @@ struct TopLeftView: View {
             .combined(with: .opacity)
 
         let removal     = AnyTransition.offset(
-            x: horizontalSizeClass == .compact || verticalSizeClass == .compact
-            ? (-CircleButton.diameterCompact.rawValue * CGFloat(buttonIndex) ) : (-CircleButton.diameter.rawValue * CGFloat(buttonIndex) ),
+            x: horizontalSizeClass == .compact ? (-CircleButton.diameterCompact.rawValue * CGFloat(buttonIndex) ) : (-CircleButton.diameter.rawValue * CGFloat(buttonIndex) ),
             y: 0)
             .combined(with: .opacity)
 

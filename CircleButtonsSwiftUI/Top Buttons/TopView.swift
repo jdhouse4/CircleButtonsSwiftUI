@@ -18,10 +18,12 @@ struct TopView: View {
 
             TopLeftView()
 
+            
             Spacer()
 
+            
             TopRightView()
-
+            
         }
     }
 }

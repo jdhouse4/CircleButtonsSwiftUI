@@ -18,6 +18,7 @@ struct TopRightCompactView: View {
 
         HStack(spacing: 5) {
             ZStack (alignment: .center) {
+                
                 Button(action: {
                     withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
 

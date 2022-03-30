@@ -15,6 +15,7 @@ struct TopRightView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     @EnvironmentObject var settingsButtons: SettingsButtons
+    @EnvironmentObject var cameraButtons: CameraButtons
 
 
     var body: some View {
@@ -25,6 +26,10 @@ struct TopRightView: View {
                     withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
 
                         self.settingsButtons.showSettingsButtons.toggle()
+                        
+                        if horizontalSizeClass == .compact {
+                            self.cameraButtons.showCameraButtons = false
+                        }
 
                     }
                 }) {
@@ -39,7 +44,7 @@ struct TopRightView: View {
                        alignment: .center)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .clipShape(Circle())
-                .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                .background(Circle().stroke(Color.blue, lineWidth: 1))
 
 
 

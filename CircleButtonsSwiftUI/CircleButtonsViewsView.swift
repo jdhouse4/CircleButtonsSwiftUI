@@ -17,12 +17,12 @@ struct CircleButtonsViewsView: View {
         VStack {
             
             TopView()
-            
+
             
             Spacer(minLength: 20)
             
             
-            BottomView()
+            //BottomView()
             
         }
         //.background(Color(#colorLiteral(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)))
