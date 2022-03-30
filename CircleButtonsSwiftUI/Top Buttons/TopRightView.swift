@@ -23,7 +23,7 @@ struct TopRightView: View {
         HStack(spacing: 5) {
             ZStack (alignment: .center) {
                 Button(action: {
-                    withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
+                    withAnimation(.ripple(buttonIndex: 1)) {
 
                         self.settingsButtons.showSettingsButtons.toggle()
                         
@@ -34,10 +34,8 @@ struct TopRightView: View {
                     }
                 }) {
                     Image(systemName: "gearshape.fill")
-                        /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                         .imageScale(.large)
                 }
-                //.frame(alignment: .trailing)
                 .zIndex(3)
                 .frame(width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
@@ -60,7 +58,6 @@ struct TopRightView: View {
 
                     }) {
                         Image(systemName: "person")
-                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(2)
@@ -75,7 +72,6 @@ struct TopRightView: View {
                     .offset(
                         x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue ) : -( CircleButton.diameterWithRadialSpacing.rawValue ),
                         y: 0)
-                    //.animation(.ripple(buttonIndex: 1), value: settingsButtons.showSettingsButtons)
 
 
 
@@ -89,7 +85,6 @@ struct TopRightView: View {
 
                     }) {
                         Image(systemName: "gearshape.2.fill")
-                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(1)
@@ -104,7 +99,6 @@ struct TopRightView: View {
                     .offset(
                         x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 ) : -( CircleButton.diameterWithRadialSpacing.rawValue * 2 ),
                         y: 0)
-                    //.animation(.ripple(buttonIndex: 2), value: settingsButtons.showSettingsButtons)
                 }
             }
         }

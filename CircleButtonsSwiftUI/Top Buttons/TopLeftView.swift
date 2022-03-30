@@ -24,7 +24,7 @@ struct TopLeftView: View {
             ZStack (alignment: .center) {
                 
                 Button(action: {
-                    withAnimation(.ripple(buttonIndex: 1)/*.easeInOut(duration: Double( CircleButton.animationSlow.rawValue ))*/) {
+                    withAnimation(.ripple(buttonIndex: 1)) {
 
                         self.cameraButtons.showCameraButtons.toggle()
                         
@@ -57,7 +57,6 @@ struct TopLeftView: View {
                         print("Aircraft button pressed is \(cameraButtons.aircraftCameraButtonPressed) in \(#file) \(#function)")
                     }) {
                         Image(systemName: "airplane")
-                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(2)
@@ -72,7 +71,6 @@ struct TopLeftView: View {
                     .offset(
                         x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue : CircleButton.diameterWithRadialSpacing.rawValue,
                         y: 0)
-                    //.animation(.ripple(buttonIndex: 1))
 
 
                     Button(action: {
@@ -83,7 +81,6 @@ struct TopLeftView: View {
 
                     }) {
                         Image(systemName: "person.fill")
-                            /*.frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)*/
                             .imageScale(.large)
                     }
                     .zIndex(1)
@@ -98,7 +95,6 @@ struct TopLeftView: View {
                     .offset(
                         x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 : CircleButton.diameterWithRadialSpacing.rawValue * 2,
                         y: 0)
-                    //.animation(.ripple(buttonIndex: 2))
                 }
             }
         }

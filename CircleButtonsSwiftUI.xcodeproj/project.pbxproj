@@ -25,8 +25,6 @@
 		E677766C269B599F004BE5EB /* BottomLeftButtonCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */; };
 		E677766D269B599F004BE5EB /* BottomButtonsViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */; };
 		E677766E269B599F004BE5EB /* BottomViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777652269B599F004BE5EB /* BottomViewCompact.swift */; };
-		E677766F269B599F004BE5EB /* TopLeftViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */; };
-		E6777670269B599F004BE5EB /* TopRightCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777653269B599F004BE5EB /* TopRightCompactView.swift */; };
 		E6777671269B599F004BE5EB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765C269B599F004BE5EB /* BottomView.swift */; };
 		E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */; };
 		E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */; };
@@ -59,12 +57,10 @@
 		E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsView.swift; sourceTree = "<group>"; };
 		E6777651269B599F004BE5EB /* CameraButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtons.swift; sourceTree = "<group>"; };
 		E6777652269B599F004BE5EB /* BottomViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewCompact.swift; sourceTree = "<group>"; };
-		E6777653269B599F004BE5EB /* TopRightCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightCompactView.swift; sourceTree = "<group>"; };
 		E6777654269B599F004BE5EB /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonView.swift; sourceTree = "<group>"; };
 		E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonCompactView.swift; sourceTree = "<group>"; };
 		E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsCompactView.swift; sourceTree = "<group>"; };
-		E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLeftViewCompact.swift; sourceTree = "<group>"; };
 		E6777659269B599F004BE5EB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		E677765A269B599F004BE5EB /* BottomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsView.swift; sourceTree = "<group>"; };
 		E677765C269B599F004BE5EB /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -131,9 +127,7 @@
 			children = (
 				E6777654269B599F004BE5EB /* TopView.swift */,
 				E6777640269B599E004BE5EB /* TopLeftView.swift */,
-				E6777658269B599F004BE5EB /* TopLeftViewCompact.swift */,
 				E677764A269B599E004BE5EB /* TopRightView.swift */,
-				E6777653269B599F004BE5EB /* TopRightCompactView.swift */,
 			);
 			path = "Top Buttons";
 			sourceTree = "<group>";
@@ -260,14 +254,12 @@
 				E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */,
 				E6777662269B599F004BE5EB /* CircleButtonsViewsView.swift in Sources */,
 				E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */,
-				E677766F269B599F004BE5EB /* TopLeftViewCompact.swift in Sources */,
 				E6777663269B599F004BE5EB /* TopLeftView.swift in Sources */,
 				E6777632269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift in Sources */,
 				E6777678269B599F004BE5EB /* CircleButton.swift in Sources */,
 				E6777669269B599F004BE5EB /* DevicesButtons.swift in Sources */,
 				E6777671269B599F004BE5EB /* BottomView.swift in Sources */,
 				E6777664269B599F004BE5EB /* CircleButtonHelper.swift in Sources */,
-				E6777670269B599F004BE5EB /* TopRightCompactView.swift in Sources */,
 				E6777666269B599F004BE5EB /* RippleAnimation.swift in Sources */,
 				E677767A269B599F004BE5EB /* CameraButtons.swift in Sources */,
 				E677765E269B599F004BE5EB /* TranslationButtons.swift in Sources */,
