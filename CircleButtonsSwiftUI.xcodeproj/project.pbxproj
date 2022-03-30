@@ -143,8 +143,8 @@
 				E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */,
 				E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */,
 				E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */,
-				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
 				E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */,
+				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
 			);
 			path = "Bottom Buttons";
 			sourceTree = "<group>";

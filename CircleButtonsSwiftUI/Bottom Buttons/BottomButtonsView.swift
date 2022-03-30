@@ -12,7 +12,7 @@ import SwiftUI
 
 struct BottomButtonsView: View {
     var body: some View {
-
+        /*
         BottomLeftButtonView()
 
         Spacer(minLength: 5)
@@ -22,7 +22,36 @@ struct BottomButtonsView: View {
         Spacer(minLength: 5)
 
         BottomRightButtonsView()
+         */
+        
+        
+        ZStack {
+            VStack {
 
+                HStack {
+
+                    Spacer()
+
+                    BottomCenterRisingButton()
+
+                    Spacer()
+                }
+
+            }
+            .zIndex(3)
+            .frame(alignment: .center)
+
+            HStack {
+
+                BottomLeftButtonView()
+
+                Spacer(minLength: 1)
+
+                BottomRightButtonsView ()
+            }
+            .zIndex(2)
+        }
+        //.background(Color(#colorLiteral(red: 0.05, green: 0.95, blue: 0.05, alpha: 1)))
     }
 }
 

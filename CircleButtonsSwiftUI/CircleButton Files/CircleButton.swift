@@ -40,8 +40,8 @@ enum CircleButton: CGFloat {
     case widthHeightCompact                 = 160
     case halfWidthHeightCompact             = 80
     case quarterExtendedHeightCompact       = 85
-    case centerButtonTopPositionCompact     = 53
-    case centerButtonBottomPositionCompact  = 165
+    case centerButtonTopPositionCompact     = -20 //35 //53
+    case centerButtonBottomPositionCompact  = 155 //165
 
     
     // Colors

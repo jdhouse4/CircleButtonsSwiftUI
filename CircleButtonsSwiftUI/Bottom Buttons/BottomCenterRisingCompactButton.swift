@@ -57,7 +57,10 @@ struct BottomCenterRisingCompactButton: View {
                     //}
                 }) {
                     Image(systemName: "network")
-                        .frame(width: CircleButton.diameterCompact.rawValue, height: CircleButton.diameterCompact.rawValue, alignment: .center)
+                        .frame(
+                            width: CircleButton.diameterCompact.rawValue,
+                            height: CircleButton.diameterCompact.rawValue,
+                            alignment: .center)
                         .imageScale(.large)
                 }
                 .frame(alignment: .trailing)
@@ -65,7 +68,10 @@ struct BottomCenterRisingCompactButton: View {
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
                 .background(Capsule().stroke(lineWidth: 2))
                 .clipShape(Circle())
-                .position(x: self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue, y: self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue)
+                .position(
+                    x: self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue,
+                    y: self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue)
+                 
                 //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateParentButton) // Animation for falling main button.
                 .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
@@ -96,7 +102,9 @@ struct BottomCenterRisingCompactButton: View {
                         .clipShape(Circle())
                         .background(Capsule().stroke(Color.blue, lineWidth: 1))
                         .transition(CircleButtonHelper.transition60DegreeButtonCompact())
-                        .position(x: CircleButtonHelper.position60DegreeRisingButtonCompact().x, y: CircleButtonHelper.position60DegreeRisingButtonCompact().y)
+                        .position(
+                            x: CircleButtonHelper.position60DegreeRisingButtonCompact().x,
+                            y: CircleButtonHelper.position60DegreeRisingButtonCompact().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
 

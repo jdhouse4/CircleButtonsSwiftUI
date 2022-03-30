@@ -19,13 +19,13 @@ struct CircleButtonsViewsView: View {
             TopView()
 
             
-            Spacer(minLength: 20)
+            Spacer(minLength: 1)
             
             
-            //BottomView()
+            BottomView()
             
         }
-        //.background(Color(#colorLiteral(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)))
+        .background(Color(#colorLiteral(red: 0.05, green: 0.05, blue: 0.05, alpha: 0.9)))
     }
 }
 

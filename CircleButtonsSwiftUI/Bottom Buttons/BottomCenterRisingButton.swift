@@ -11,6 +11,8 @@ import SwiftUI
 
 
 struct BottomCenterRisingButton: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     @EnvironmentObject var devicesButton: DevicesButton
 
 
@@ -20,23 +22,68 @@ struct BottomCenterRisingButton: View {
 
             ZStack {
                 Button(action: {
-                    withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
+                    
+                    if horizontalSizeClass == .compact {
 
-                        self.devicesButton.animateChildButtons.toggle()
+                        // Deploy buttons
+                        if self.devicesButton.animateButtons == false {
+                            print("Deploying main button")
 
+                            self.devicesButton.animateParentButton.toggle()// = true
+
+                            DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
+                                print("Deploying device buttons")
+                                self.devicesButton.animateChildButtons.toggle()
+                            }
+
+                        }
+
+                        // Retract Buttons
+                        if self.devicesButton.animateButtons == true {
+                            print("Retracting device buttons")
+
+                            self.devicesButton.animateChildButtons.toggle()
+
+                            DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
+                                print("Retracting main button")
+
+                                self.devicesButton.animateParentButton.toggle()// = false
+                            }
+
+                        }
+
+                        self.devicesButton.animateButtons.toggle()
+
+                    } else {
+                        
+                        withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
+
+                            self.devicesButton.animateChildButtons.toggle()
+
+                        }
                     }
                 }) {
                     Image(systemName: "network")
-                        .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                         .imageScale(.large)
                 }
-                .frame(alignment: .trailing)
                 .zIndex(3)
+                .frame(
+                    width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    alignment: .center)
+                //.frame(alignment: .trailing)
                 .background(CircleButtonColor.mainWithoutBackground.rawValue)
-                .background(Capsule().stroke(lineWidth: 2))
+                .background(Circle().stroke(lineWidth: 2))
                 .clipShape(Circle())
-                .position(x: CircleButtonHelper.positionMainButton().x, y: CircleButtonHelper.positionMainButton().y)
-                //.animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
+                .position(
+                    x: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue) : CircleButtonHelper.positionMainButton().x,
+                    y: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue ) : CircleButtonHelper.positionMainButton().y
+                    )
+                /*.position(
+                    x: self.devicesButton.animateParentButton && horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().x : CircleButtonHelper.positionMainButton().x,
+                    y: self.devicesButton.animateParentButton && horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().y : CircleButtonHelper.positionMainButton().y)
+                 */
+                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
                 if devicesButton.animateChildButtons {
 
@@ -56,16 +103,21 @@ struct BottomCenterRisingButton: View {
 
                         }) {
                             Image(systemName: "iphone")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Select iPhone or iPad."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition60DegreeButton())
-                        .position(x: CircleButtonHelper.position60DegreeButton().x, y: CircleButtonHelper.position60DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition60DegreeButtonCompact() : CircleButtonHelper.transition60DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().x : CircleButtonHelper.position60DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().y : CircleButtonHelper.position60DegreeButton().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
@@ -83,16 +135,21 @@ struct BottomCenterRisingButton: View {
 
                         }) {
                             Image(systemName: "macpro.gen3")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Select Macintosh computer."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition180DegreeButton())
-                        .position(x: CircleButtonHelper.position180DegreeButton().x, y: CircleButtonHelper.position180DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition180DegreeButtonCompact() : CircleButtonHelper.transition180DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().x : CircleButtonHelper.position180DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().y : CircleButtonHelper.position180DegreeButton().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
@@ -111,28 +168,39 @@ struct BottomCenterRisingButton: View {
 
                         }) {
                             Image(systemName: "appletv")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Select Apple TV"))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithoutBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition300DegreeButton())
-                        .position(x: CircleButtonHelper.position300DegreeButton().x, y: CircleButtonHelper.position300DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition300DegreeButtonCompact() : CircleButtonHelper.transition300DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeRisingButtonCompact().x : CircleButtonHelper.position300DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeRisingButtonCompact().y : CircleButtonHelper.position300DegreeButton().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
                     }
-                    .animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
+                    //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
                 }
 
             }
-            .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.widthHeight.rawValue, alignment: .top)
-
+            .frame(
+                width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                alignment: .top)
+            .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
         }
-        .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.extendedHeight.rawValue, alignment: .bottom)
+        .frame(
+            width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+            height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+            alignment: .bottom)
         
     }
 }

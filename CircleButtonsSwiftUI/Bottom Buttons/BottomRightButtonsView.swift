@@ -11,6 +11,8 @@ import SwiftUI
 
 
 struct BottomRightButtonsView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     @EnvironmentObject var rotationButtons: RotationButtons
 
     let buttonAnimationTime = 0.25
@@ -24,7 +26,9 @@ struct BottomRightButtonsView: View {
                     .fill(CircleButtonColor.background.rawValue)
                     .zIndex(-1)
                     .clipShape(Circle())
-                    .position(x: CircleButton.halfWidthHeight.rawValue, y: CircleButton.halfWidthHeight.rawValue)
+                    .position(
+                        x: horizontalSizeClass == .compact ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeight.rawValue,
+                        y: horizontalSizeClass == .compact ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeight.rawValue)
 
 
 
@@ -39,14 +43,19 @@ struct BottomRightButtonsView: View {
                     }
                 }) {
                     Image(systemName: "rotate.3d")
-                        .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                         .imageScale(.large)
                 }
                 .zIndex(3)
+                .frame(
+                    width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                    alignment: .center)
                 .background(CircleButtonColor.main.rawValue)
                 .clipShape(Circle())
                 .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                .position(x: CircleButtonHelper.positionMainButton().x, y: CircleButtonHelper.positionMainButton().y)
+                .position(
+                    x: horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().x : CircleButtonHelper.positionMainButton().x,
+                    y: horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().x : CircleButtonHelper.positionMainButton().y)
 
 
                 if rotationButtons.showRotationButtons {
@@ -67,16 +76,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.up")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Pitching up."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition0DegreeButton())
-                        .position(x: CircleButtonHelper.position0DegreeButton().x, y: CircleButtonHelper.position0DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition0DegreeButtonCompact() : CircleButtonHelper.transition0DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position0DegreeButtonCompact().x : CircleButtonHelper.position0DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position0DegreeButtonCompact().y : CircleButtonHelper.position0DegreeButton().y)
                         .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -95,16 +109,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.clockwise")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Roll starboard."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition60DegreeButton())
-                        .position(x: CircleButtonHelper.position60DegreeButton().x, y: CircleButtonHelper.position60DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition60DegreeButtonCompact() : CircleButtonHelper.transition60DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeButtonCompact().x : CircleButtonHelper.position60DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeButtonCompact().y : CircleButtonHelper.position60DegreeButton().y)
                         .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -124,16 +143,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.right")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Yawing starboard."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition120DegreeButton())
-                        .position(x: CircleButtonHelper.position120DegreeButton().x, y: CircleButtonHelper.position120DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition120DegreeButtonCompact() : CircleButtonHelper.transition120DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position120DegreeButtonCompact().x : CircleButtonHelper.position120DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position120DegreeButtonCompact().y : CircleButtonHelper.position120DegreeButton().y)
                         .animation(.ripple(buttonIndex: 2), value: rotationButtons.showRotationButtons)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -153,16 +177,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.down")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Pitching down."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition180DegreeButton())
-                        .position(x: CircleButtonHelper.position180DegreeButton().x, y: CircleButtonHelper.position180DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition180DegreeButtonCompact() : CircleButtonHelper.transition180DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeButtonCompact().x : CircleButtonHelper.position180DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeButtonCompact().y : CircleButtonHelper.position180DegreeButton().y)
                         //.animation(.ripple(buttonIndex: 2))
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -182,16 +211,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.left")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Yawing port."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition240DegreeButton())
-                        .position(x: CircleButtonHelper.position240DegreeButton().x, y: CircleButtonHelper.position240DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition240DegreeButtonCompact() : CircleButtonHelper.transition240DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position240DegreeButtonCompact().x : CircleButtonHelper.position240DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position240DegreeButtonCompact().y : CircleButtonHelper.position240DegreeButton().y)
                         //.animation(.ripple(buttonIndex: 2))
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -211,16 +245,21 @@ struct BottomRightButtonsView: View {
                             
                         }) {
                             Image(systemName: "arrow.counterclockwise")
-                                .frame(width: CircleButton.diameter.rawValue, height: CircleButton.diameter.rawValue, alignment: .center)
                                 .imageScale(.large)
                                 .accessibility(label: Text("Rolling port."))
                         }
                         .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue :  CircleButton.diameter.rawValue,
+                            alignment: .center)
                         .background(CircleButtonColor.offWithBackground.rawValue)
                         .clipShape(Circle())
-                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                        .transition(CircleButtonHelper.transition300DegreeButton())
-                        .position(x: CircleButtonHelper.position300DegreeButton().x, y: CircleButtonHelper.position300DegreeButton().y)
+                        .background(Circle().stroke(Color.blue, lineWidth: 1))
+                        .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition300DegreeButtonCompact() : CircleButtonHelper.transition300DegreeButton())
+                        .position(
+                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeButtonCompact().x : CircleButtonHelper.position300DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeButtonCompact().y : CircleButtonHelper.position300DegreeButton().y)
                         //.animation(.ripple(buttonIndex: 2))
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
                         
@@ -230,10 +269,16 @@ struct BottomRightButtonsView: View {
                 }
 
             }
-            .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.widthHeight.rawValue, alignment: .bottomTrailing)
+            .frame(
+                width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                height: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                alignment: .bottomTrailing)
 
         }
-        .frame(width: CircleButton.widthHeight.rawValue, height: CircleButton.extendedHeight.rawValue, alignment: .bottomTrailing)
+        .frame(
+            width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+            height: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+            alignment: .bottomTrailing)
         .padding(.init(top: 5, leading: 5, bottom: 5, trailing: 5))
 
     }
