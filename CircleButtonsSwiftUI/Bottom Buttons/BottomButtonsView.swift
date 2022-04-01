@@ -12,19 +12,7 @@ import SwiftUI
 
 struct BottomButtonsView: View {
     var body: some View {
-        /*
-        BottomLeftButtonView()
 
-        Spacer(minLength: 5)
-
-        BottomCenterRisingButton()
-
-        Spacer(minLength: 5)
-
-        BottomRightButtonsView()
-         */
-        
-        
         ZStack {
             VStack {
 
