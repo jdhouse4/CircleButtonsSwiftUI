@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E67048D127F6B9840035D76A /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67048D027F6B9840035D76A /* Orientation.swift */; };
-		E67048D327F6BA2C0035D76A /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67048D227F6BA2C0035D76A /* OrientationManager.swift */; };
 		E67048D527F6CCDE0035D76A /* DeviceOrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67048D427F6CCDE0035D76A /* DeviceOrientationManager.swift */; };
 		E6777632269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777631269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift */; };
 		E6777634269B5927004BE5EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777633269B5927004BE5EB /* ContentView.swift */; };
@@ -23,13 +21,8 @@
 		E6777666269B599F004BE5EB /* RippleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765D269B599F004BE5EB /* RippleAnimation.swift */; };
 		E6777667269B599F004BE5EB /* BottomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765A269B599F004BE5EB /* BottomButtonsView.swift */; };
 		E6777669269B599F004BE5EB /* DevicesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777646269B599E004BE5EB /* DevicesButtons.swift */; };
-		E677766A269B599F004BE5EB /* BottomRightButtonsCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */; };
 		E677766B269B599F004BE5EB /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777654269B599F004BE5EB /* TopView.swift */; };
-		E677766C269B599F004BE5EB /* BottomLeftButtonCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */; };
-		E677766D269B599F004BE5EB /* BottomButtonsViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */; };
-		E677766E269B599F004BE5EB /* BottomViewCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777652269B599F004BE5EB /* BottomViewCompact.swift */; };
 		E6777671269B599F004BE5EB /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677765C269B599F004BE5EB /* BottomView.swift */; };
-		E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */; };
 		E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */; };
 		E6777674269B599F004BE5EB /* RotationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764D269B599E004BE5EB /* RotationButtons.swift */; };
 		E6777675269B599F004BE5EB /* TopRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677764A269B599E004BE5EB /* TopRightView.swift */; };
@@ -40,9 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E67048D027F6B9840035D76A /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Orientation.swift; path = CircleButtonsSwiftUI/Orientation.swift; sourceTree = "<group>"; };
-		E67048D227F6BA2C0035D76A /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrientationManager.swift; path = CircleButtonsSwiftUI/OrientationManager.swift; sourceTree = "<group>"; };
-		E67048D427F6CCDE0035D76A /* DeviceOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceOrientationManager.swift; path = CircleButtonsSwiftUI/DeviceOrientationManager.swift; sourceTree = "<group>"; };
+		E67048D427F6CCDE0035D76A /* DeviceOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationManager.swift; sourceTree = "<group>"; };
 		E677762E269B5927004BE5EB /* CircleButtonsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleButtonsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6777631269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonsSwiftUIApp.swift; sourceTree = "<group>"; };
 		E6777633269B5927004BE5EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,11 +41,9 @@
 		E6777638269B5928004BE5EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E677763A269B5928004BE5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6777640269B599E004BE5EB /* TopLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLeftView.swift; sourceTree = "<group>"; };
-		E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingCompactButton.swift; sourceTree = "<group>"; };
 		E6777644269B599E004BE5EB /* CircleButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonHelper.swift; sourceTree = "<group>"; };
 		E6777646269B599E004BE5EB /* DevicesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesButtons.swift; sourceTree = "<group>"; };
 		E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCenterRisingButton.swift; sourceTree = "<group>"; };
-		E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsViewCompact.swift; sourceTree = "<group>"; };
 		E677764A269B599E004BE5EB /* TopRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRightView.swift; sourceTree = "<group>"; };
 		E677764B269B599E004BE5EB /* SettingsButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtons.swift; sourceTree = "<group>"; };
 		E677764D269B599E004BE5EB /* RotationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButtons.swift; sourceTree = "<group>"; };
@@ -62,11 +51,8 @@
 		E677764F269B599E004BE5EB /* TranslationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationButtons.swift; sourceTree = "<group>"; };
 		E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsView.swift; sourceTree = "<group>"; };
 		E6777651269B599F004BE5EB /* CameraButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtons.swift; sourceTree = "<group>"; };
-		E6777652269B599F004BE5EB /* BottomViewCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewCompact.swift; sourceTree = "<group>"; };
 		E6777654269B599F004BE5EB /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonView.swift; sourceTree = "<group>"; };
-		E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLeftButtonCompactView.swift; sourceTree = "<group>"; };
-		E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButtonsCompactView.swift; sourceTree = "<group>"; };
 		E6777659269B599F004BE5EB /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		E677765A269B599F004BE5EB /* BottomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsView.swift; sourceTree = "<group>"; };
 		E677765C269B599F004BE5EB /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -88,9 +74,6 @@
 		E6777625269B5927004BE5EB = {
 			isa = PBXGroup;
 			children = (
-				E67048D027F6B9840035D76A /* Orientation.swift */,
-				E67048D227F6BA2C0035D76A /* OrientationManager.swift */,
-				E67048D427F6CCDE0035D76A /* DeviceOrientationManager.swift */,
 				E6777630269B5927004BE5EB /* CircleButtonsSwiftUI */,
 				E677762F269B5927004BE5EB /* Products */,
 			);
@@ -145,15 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				E677765C269B599F004BE5EB /* BottomView.swift */,
-				E6777652269B599F004BE5EB /* BottomViewCompact.swift */,
 				E677765A269B599F004BE5EB /* BottomButtonsView.swift */,
-				E6777648269B599E004BE5EB /* BottomButtonsViewCompact.swift */,
 				E6777655269B599F004BE5EB /* BottomLeftButtonView.swift */,
-				E6777656269B599F004BE5EB /* BottomLeftButtonCompactView.swift */,
 				E6777647269B599E004BE5EB /* BottomCenterRisingButton.swift */,
-				E6777641269B599E004BE5EB /* BottomCenterRisingCompactButton.swift */,
 				E6777650269B599F004BE5EB /* BottomRightButtonsView.swift */,
-				E6777657269B599F004BE5EB /* BottomRightButtonsCompactView.swift */,
 			);
 			path = "Bottom Buttons";
 			sourceTree = "<group>";
@@ -175,6 +153,7 @@
 				E6777646269B599E004BE5EB /* DevicesButtons.swift */,
 				E677764D269B599E004BE5EB /* RotationButtons.swift */,
 				E677764F269B599E004BE5EB /* TranslationButtons.swift */,
+				E67048D427F6CCDE0035D76A /* DeviceOrientationManager.swift */,
 			);
 			path = "EnvironmentObject Files";
 			sourceTree = "<group>";
@@ -250,21 +229,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6777660269B599F004BE5EB /* SettingsButtons.swift in Sources */,
-				E67048D127F6B9840035D76A /* Orientation.swift in Sources */,
 				E67048D527F6CCDE0035D76A /* DeviceOrientationManager.swift in Sources */,
 				E6777675269B599F004BE5EB /* TopRightView.swift in Sources */,
 				E6777634269B5927004BE5EB /* ContentView.swift in Sources */,
-				E677766A269B599F004BE5EB /* BottomRightButtonsCompactView.swift in Sources */,
 				E6777665269B599F004BE5EB /* BottomRightButtonsView.swift in Sources */,
 				E677766B269B599F004BE5EB /* TopView.swift in Sources */,
 				E6777674269B599F004BE5EB /* RotationButtons.swift in Sources */,
 				E6777667269B599F004BE5EB /* BottomButtonsView.swift in Sources */,
 				E6777679269B599F004BE5EB /* BottomCenterRisingButton.swift in Sources */,
-				E677766E269B599F004BE5EB /* BottomViewCompact.swift in Sources */,
-				E677766C269B599F004BE5EB /* BottomLeftButtonCompactView.swift in Sources */,
-				E6777672269B599F004BE5EB /* BottomCenterRisingCompactButton.swift in Sources */,
 				E6777662269B599F004BE5EB /* CircleButtonsViewsView.swift in Sources */,
-				E67048D327F6BA2C0035D76A /* OrientationManager.swift in Sources */,
 				E6777673269B599F004BE5EB /* BottomLeftButtonView.swift in Sources */,
 				E6777663269B599F004BE5EB /* TopLeftView.swift in Sources */,
 				E6777632269B5927004BE5EB /* CircleButtonsSwiftUIApp.swift in Sources */,
@@ -275,7 +248,6 @@
 				E6777666269B599F004BE5EB /* RippleAnimation.swift in Sources */,
 				E677767A269B599F004BE5EB /* CameraButtons.swift in Sources */,
 				E677765E269B599F004BE5EB /* TranslationButtons.swift in Sources */,
-				E677766D269B599F004BE5EB /* BottomButtonsViewCompact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

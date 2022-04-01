@@ -14,11 +14,10 @@ struct TopLeftView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
-    @Orientation var orientation
-
     @EnvironmentObject var cameraButtons: CameraButtons
     @EnvironmentObject var settingsButtons: SettingsButtons
-
+    @EnvironmentObject var orientationManager: DeviceOrientation
+    
 
     var body: some View {
 
@@ -30,13 +29,13 @@ struct TopLeftView: View {
                         
                         self.cameraButtons.showCameraButtons.toggle()
                         
-                        if orientation.isLandscape {
+                        if orientationManager.orientation == .landscape {
                             print("Landscape Orientation")
                             
 
                         }
                         
-                        if orientation.isPortrait {
+                        if orientationManager.orientation == .portrait {
                             print("Portrait Orientation")
                             
                             if horizontalSizeClass == .compact {

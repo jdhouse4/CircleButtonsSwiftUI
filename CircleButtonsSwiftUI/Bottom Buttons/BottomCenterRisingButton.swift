@@ -220,23 +220,13 @@ struct BottomCenterRisingButton: View {
                 height: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeightCompact.rawValue ) : CircleButton.widthHeight.rawValue,
                 alignment: .top)
             .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
-             
-            /*.frame(
-                width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
-                height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue :  CircleButton.widthHeight.rawValue,
-                alignment: .bottom)
-            */
+
         }
         .frame(
             width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
             height: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeightCompact.rawValue ) : CircleButton.widthHeight.rawValue,
             alignment: .bottom)
-         
-        /*.frame(
-            width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
-            height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
-            alignment: .bottom)
-         */
+        
     }
 }
 
