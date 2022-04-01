@@ -12,6 +12,8 @@ import SwiftUI
 
 struct BottomCenterRisingButton: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    @Orientation var orientation
 
     @EnvironmentObject var devicesButton: DevicesButton
 
@@ -23,36 +25,60 @@ struct BottomCenterRisingButton: View {
             ZStack {
                 Button(action: {
                     
+                    print("Orientation is landscape: \(orientation.isLandscape)")
+                    
                     if horizontalSizeClass == .compact {
+                        print("Compact Screen")
+                        
+                        if orientation.isPortrait {
+                            print("Portrait Orientation")
 
-                        // Deploy buttons
-                        if self.devicesButton.animateButtons == false {
-                            print("Deploying main button")
-
-                            self.devicesButton.animateParentButton.toggle()// = true
-
-                            DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
-                                print("Deploying device buttons")
+                            // Deploy buttons
+                            if self.devicesButton.animateButtons == false {
+                                print("Deploying main button")
+                                
+                                self.devicesButton.animateParentButton.toggle()// = true
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
+                                    print("Deploying device buttons")
+                                    self.devicesButton.animateChildButtons.toggle()
+                                }
+                                
+                            }
+                            
+                            // Retract Buttons
+                            if self.devicesButton.animateButtons {
+                                print("Retracting device buttons")
+                                
                                 self.devicesButton.animateChildButtons.toggle()
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
+                                    print("Retracting main button")
+                                    
+                                    self.devicesButton.animateParentButton.toggle()// = false
+                                }
+
                             }
 
+                            self.devicesButton.animateButtons.toggle()
                         }
+                        
+                        if orientation.isLandscape == true {
+                            print("Landscape Orientation")
+                            withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
 
-                        // Retract Buttons
-                        if self.devicesButton.animateButtons == true {
-                            print("Retracting device buttons")
+                                self.devicesButton.animateChildButtons = true //.toggle()
+                                print("Non compact dispaly, animateChildButtons: \(self.devicesButton.animateChildButtons)")
+                                
+                                self.devicesButton.animateParentButton = true //.toggle()
+                                print("Non compact dispaly, animateParentButton: \(self.devicesButton.animateParentButton)")
 
-                            self.devicesButton.animateChildButtons.toggle()
-
-                            DispatchQueue.main.asyncAfter(deadline: .now() + Double(CircleButton.animationFast.rawValue)) {
-                                print("Retracting main button")
-
-                                self.devicesButton.animateParentButton.toggle()// = false
+                                //self.devicesButton.animateButtons = true //.toggle()
+                                print("Non compact dispaly, animateButtons: \(self.devicesButton.animateButtons)\n")
                             }
 
+                            self.devicesButton.animateButtons.toggle()
                         }
-
-                        self.devicesButton.animateButtons.toggle()
 
                     } else {
                         
@@ -84,11 +110,7 @@ struct BottomCenterRisingButton: View {
                     x: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue) : CircleButtonHelper.positionMainButton().x,
                     y: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue ) : CircleButtonHelper.positionMainButton().y
                     )
-                /*.position(
-                    x: self.devicesButton.animateParentButton && horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().x : CircleButtonHelper.positionMainButton().x,
-                    y: self.devicesButton.animateParentButton && horizontalSizeClass == .compact ? CircleButtonHelper.positionMainButtonCompact().y : CircleButtonHelper.positionMainButton().y)
-                 */
-                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
+               .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
                 if devicesButton.animateChildButtons {
 
@@ -123,7 +145,6 @@ struct BottomCenterRisingButton: View {
                         .position(
                             x: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().x : CircleButtonHelper.position60DegreeButton().x,
                             y: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().y : CircleButtonHelper.position60DegreeButton().y)
-                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
                         //
@@ -155,7 +176,6 @@ struct BottomCenterRisingButton: View {
                         .position(
                             x: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().x : CircleButtonHelper.position180DegreeButton().x,
                             y: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().y : CircleButtonHelper.position180DegreeButton().y)
-                        //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
 
 
@@ -191,7 +211,6 @@ struct BottomCenterRisingButton: View {
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
                     }
-                    //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0))
 
                 }
 

@@ -54,7 +54,7 @@ struct ContentView: View {
 
         CircleButtonsViewsView()
             .background(
-                Image("Artemis-1_Stacking_Image")
+                Image("Artemis-1_Wet_Dress_Sunset")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
@@ -107,7 +107,7 @@ struct ContentView: View {
         .environmentObject(transportationButton)
         
         .statusBar(hidden: true)
-        .background(Color.blue.opacity(0.25))
+        //.background(Color.blue.opacity(0.25))
     }
 }
 

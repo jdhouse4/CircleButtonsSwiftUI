@@ -14,6 +14,8 @@ struct TopRightView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
+    @Orientation var orientation
+
     @EnvironmentObject var settingsButtons: SettingsButtons
     @EnvironmentObject var cameraButtons: CameraButtons
 
@@ -23,12 +25,25 @@ struct TopRightView: View {
         HStack(spacing: 5) {
             ZStack (alignment: .center) {
                 Button(action: {
+                    print("Landscape Orientation: \(orientation.isLandscape)")
                     withAnimation(.ripple(buttonIndex: 1)) {
 
                         self.settingsButtons.showSettingsButtons.toggle()
+
+                        if orientation.isLandscape {
+                            print("Landscape Orientation")
+                            
+
+                        }
                         
-                        if horizontalSizeClass == .compact {
-                            self.cameraButtons.showCameraButtons = false
+                        if orientation.isPortrait {
+                            print("Portrait Orientation")
+                            
+                            if horizontalSizeClass == .compact {
+
+                                self.cameraButtons.showCameraButtons = false
+
+                            }
                         }
 
                     }

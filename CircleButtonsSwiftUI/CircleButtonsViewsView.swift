@@ -25,7 +25,7 @@ struct CircleButtonsViewsView: View {
             BottomView()
             
         }
-        .background(Color(#colorLiteral(red: 0.05, green: 0.05, blue: 0.05, alpha: 0.9)))
+        .background(Color(#colorLiteral(red: 0.05, green: 0.05, blue: 0.05, alpha: 0.05)))
     }
 }
 

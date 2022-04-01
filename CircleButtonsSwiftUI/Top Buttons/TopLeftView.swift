@@ -13,6 +13,8 @@ import SwiftUI
 struct TopLeftView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    
+    @Orientation var orientation
 
     @EnvironmentObject var cameraButtons: CameraButtons
     @EnvironmentObject var settingsButtons: SettingsButtons
@@ -25,13 +27,27 @@ struct TopLeftView: View {
                 
                 Button(action: {
                     withAnimation(.ripple(buttonIndex: 1)) {
-
+                        
                         self.cameraButtons.showCameraButtons.toggle()
                         
-                        if horizontalSizeClass == .compact {
-                            self.settingsButtons.showSettingsButtons = false
-                        }
+                        if orientation.isLandscape {
+                            print("Landscape Orientation")
+                            
 
+                        }
+                        
+                        if orientation.isPortrait {
+                            print("Portrait Orientation")
+                            
+                            if horizontalSizeClass == .compact {
+                                
+                                self.settingsButtons.showSettingsButtons = false
+
+                            }
+                        }
+                        
+                        //self.settingsButtons.showSettingsButtons.toggle()
+                        
                     }
                 }) {
                     Image(systemName: "video.fill")
