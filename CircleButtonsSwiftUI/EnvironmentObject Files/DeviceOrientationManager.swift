@@ -20,6 +20,20 @@ import Combine
 ///
 ///- Note: Posted on [SwiftUI - Determining Current Device and Orientation](https://developer.apple.com/forums/thread/126878)
 ///
+/// Usage:
+///     In the View you want to monitor for orientation changes, call,
+///
+///  `@EnvironmentObject var orientationManager: DeviceOrientationManager`
+///
+///     Don't forget that in the primary view, that is where this `@StateObject` for the `DeviceOrientationManager` will be instantiated, call,
+///
+///   `@StateObject var orientationManager = DeviceOrientationManger()`
+///
+///   and below the view content,
+///
+///   `.environmentObject(orientationManager`
+///
+
 final class DeviceOrientation: ObservableObject {
       enum Orientation {
         case portrait
@@ -35,6 +49,7 @@ final class DeviceOrientation: ObservableObject {
     
     init() {
         orientation = UIDevice.current.orientation.isLandscape ? .landscape : .portrait
+        
         listener = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
             .compactMap { ($0.object as? UIDevice)?.orientation }
             .compactMap { deviceOrientation -> Orientation? in
