@@ -30,16 +30,6 @@ struct ContentView: View {
 
 
     var body: some View {
-        /*ZStack {
-            /*
-            Image("Artemis-1_Stacking_Image")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                //.frame(width: 100, height: 100, alignment: .center)
-            */
-            
-            //CircleButtonsViewsView()
-        }*/
         
         ///
         /// - Important: Instead of a ZStack for layering an Image view beneath other views, this sets the Image as a background.
