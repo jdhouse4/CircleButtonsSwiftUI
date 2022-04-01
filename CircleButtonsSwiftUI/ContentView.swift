@@ -25,6 +25,7 @@ struct ContentView: View {
     @StateObject var devicesButton                  = DevicesButton()
     @StateObject var translationButtons             = TranslationButtons()
     @StateObject var transportationButton           = RotationButtons()
+    @StateObject var orientationManager             = DeviceOrientation()
 
 
 
@@ -105,6 +106,7 @@ struct ContentView: View {
         .environmentObject(devicesButton)
         .environmentObject(translationButtons)
         .environmentObject(transportationButton)
+        .environmentObject(orientationManager)
         
         .statusBar(hidden: true)
         //.background(Color.blue.opacity(0.25))

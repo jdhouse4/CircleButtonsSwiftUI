@@ -13,8 +13,8 @@ import SwiftUI
 struct BottomCenterRisingButton: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
-    @Orientation var orientation
-
+    @EnvironmentObject var orientationManager: DeviceOrientation
+    
     @EnvironmentObject var devicesButton: DevicesButton
 
 
@@ -25,12 +25,13 @@ struct BottomCenterRisingButton: View {
             ZStack {
                 Button(action: {
                     
-                    print("Orientation is landscape: \(orientation.isLandscape)")
                     
                     if horizontalSizeClass == .compact {
                         print("Compact Screen")
                         
-                        if orientation.isPortrait {
+                        //print("DeviceOrientation is landscape: \(orientationManager.orientation == .landscape ? "landscape" : "portrait")")
+                        
+                        if orientationManager.orientation == .portrait {
                             print("Portrait Orientation")
 
                             // Deploy buttons
@@ -63,21 +64,19 @@ struct BottomCenterRisingButton: View {
                             self.devicesButton.animateButtons.toggle()
                         }
                         
-                        if orientation.isLandscape == true {
+                        if orientationManager.orientation == .landscape {
                             print("Landscape Orientation")
                             withAnimation(.easeInOut(duration: Double(CircleButton.animationFast.rawValue))) {
 
-                                self.devicesButton.animateChildButtons = true //.toggle()
+                                self.devicesButton.animateChildButtons.toggle()
                                 print("Non compact dispaly, animateChildButtons: \(self.devicesButton.animateChildButtons)")
                                 
-                                self.devicesButton.animateParentButton = true //.toggle()
+                                self.devicesButton.animateParentButton.toggle()
                                 print("Non compact dispaly, animateParentButton: \(self.devicesButton.animateParentButton)")
 
-                                //self.devicesButton.animateButtons = true //.toggle()
+                                self.devicesButton.animateButtons.toggle()
                                 print("Non compact dispaly, animateButtons: \(self.devicesButton.animateButtons)\n")
                             }
-
-                            self.devicesButton.animateButtons.toggle()
                         }
 
                     } else {
@@ -107,8 +106,8 @@ struct BottomCenterRisingButton: View {
                 .background(Circle().stroke(lineWidth: 2))
                 .clipShape(Circle())
                 .position(
-                    x: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue) : CircleButtonHelper.positionMainButton().x,
-                    y: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue ) : CircleButtonHelper.positionMainButton().y
+                    x: horizontalSizeClass == .compact ? ( self.devicesButton.animateParentButton ? CircleButton.halfWidthHeightCompact.rawValue : CircleButton.halfWidthHeightCompact.rawValue ) : CircleButtonHelper.positionMainButton().x,
+                    y: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? ( self.devicesButton.animateParentButton ? CircleButton.centerButtonTopPositionCompact.rawValue : CircleButton.centerButtonBottomPositionCompact.rawValue ) : CircleButtonHelper.positionMainButtonCompact().y ) : CircleButtonHelper.positionMainButton().y
                     )
                .animation(.ripple(buttonIndex: 1), value: devicesButton.animateParentButton)
 
@@ -143,8 +142,8 @@ struct BottomCenterRisingButton: View {
                         .background(Circle().stroke(Color.blue, lineWidth: 1))
                         .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition60DegreeButtonCompact() : CircleButtonHelper.transition60DegreeButton())
                         .position(
-                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().x : CircleButtonHelper.position60DegreeButton().x,
-                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position60DegreeRisingButtonCompact().y : CircleButtonHelper.position60DegreeButton().y)
+                            x: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButtonHelper.position60DegreeRisingButtonCompact().x : CircleButtonHelper.position60DegreeButtonCompact().x ) : CircleButtonHelper.position60DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButtonHelper.position60DegreeRisingButtonCompact().y : CircleButtonHelper.position60DegreeButtonCompact().y ) : CircleButtonHelper.position60DegreeButton().y)
 
 
                         //
@@ -174,8 +173,8 @@ struct BottomCenterRisingButton: View {
                         .background(Circle().stroke(Color.blue, lineWidth: 1))
                         .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition180DegreeButtonCompact() : CircleButtonHelper.transition180DegreeButton())
                         .position(
-                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().x : CircleButtonHelper.position180DegreeButton().x,
-                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position180DegreeRisingButtonCompact().y : CircleButtonHelper.position180DegreeButton().y)
+                            x: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButtonHelper.position180DegreeRisingButtonCompact().x : CircleButtonHelper.position180DegreeButtonCompact().x ) : CircleButtonHelper.position180DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButtonHelper.position180DegreeRisingButtonCompact().y : CircleButtonHelper.position180DegreeButtonCompact().y ) : CircleButtonHelper.position180DegreeButton().y)
 
 
 
@@ -206,8 +205,8 @@ struct BottomCenterRisingButton: View {
                         .background(Circle().stroke(Color.blue, lineWidth: 1))
                         .transition(horizontalSizeClass == .compact ? CircleButtonHelper.transition300DegreeButtonCompact() : CircleButtonHelper.transition300DegreeButton())
                         .position(
-                            x: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeRisingButtonCompact().x : CircleButtonHelper.position300DegreeButton().x,
-                            y: horizontalSizeClass == .compact ? CircleButtonHelper.position300DegreeRisingButtonCompact().y : CircleButtonHelper.position300DegreeButton().y)
+                            x: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ?  CircleButtonHelper.position300DegreeRisingButtonCompact().x : CircleButtonHelper.position300DegreeButtonCompact().x ) : CircleButtonHelper.position300DegreeButton().x,
+                            y: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ?  CircleButtonHelper.position300DegreeRisingButtonCompact().y : CircleButtonHelper.position300DegreeButtonCompact().y ) : CircleButtonHelper.position300DegreeButton().y)
                         //.animation(.easeInOut(duration: Double( CircleButton.animationFast.rawValue) ).delay(0.0), value: devicesButton.animateChildButtons)
 
                     }
@@ -215,17 +214,29 @@ struct BottomCenterRisingButton: View {
                 }
 
             }
+            
             .frame(
                 width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
-                height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                height: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeightCompact.rawValue ) : CircleButton.widthHeight.rawValue,
                 alignment: .top)
             .animation(.ripple(buttonIndex: 1), value: devicesButton.animateChildButtons)
+             
+            /*.frame(
+                width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+                height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue :  CircleButton.widthHeight.rawValue,
+                alignment: .bottom)
+            */
         }
         .frame(
             width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
+            height: horizontalSizeClass == .compact ? ( orientationManager.orientation == .portrait ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeightCompact.rawValue ) : CircleButton.widthHeight.rawValue,
+            alignment: .bottom)
+         
+        /*.frame(
+            width: horizontalSizeClass == .compact ? CircleButton.widthHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
             height: horizontalSizeClass == .compact ? CircleButton.extendedHeightCompact.rawValue : CircleButton.widthHeight.rawValue,
             alignment: .bottom)
-        
+         */
     }
 }
 
