@@ -143,6 +143,9 @@ struct TopRightView: View {
     }
 }
 
+
+
+
 struct TopRightView_Previews: PreviewProvider {
     static var previews: some View {
         TopRightView().environmentObject(SettingsButtons())
