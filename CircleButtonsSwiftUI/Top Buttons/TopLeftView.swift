@@ -64,52 +64,55 @@ struct TopLeftView: View {
 
 
                 if cameraButtons.showCameraButtons {
+                    
+                    Group {
 
-                    Button(action: {
-
-                        self.doSomething()
-                        self.cameraButtons.aircraftCameraButtonPressed.toggle()
-                        print("Aircraft button pressed is \(cameraButtons.aircraftCameraButtonPressed) in \(#file) \(#function)")
-                    }) {
-                        Image(systemName: "airplane")
-                            .imageScale(.large)
+                        Button(action: {
+                            
+                            self.doSomething()
+                            self.cameraButtons.aircraftCameraButtonPressed.toggle()
+                            print("Aircraft button pressed is \(cameraButtons.aircraftCameraButtonPressed) in \(#file) \(#function)")
+                        }) {
+                            Image(systemName: "airplane")
+                                .imageScale(.large)
+                        }
+                        .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
+                        .background(CircleButtonColor.offWithoutBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(moveAndFade(buttonIndex: 1))
+                        .offset(
+                            x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue : CircleButton.diameterWithRadialSpacing.rawValue,
+                            y: 0)
+                        
+                        
+                        Button(action: {
+                            
+                            self.doSomething()
+                            self.cameraButtons.pilotCameraButtonPressed.toggle()
+                            print("Pilot button pressed is \(cameraButtons.pilotCameraButtonPressed) in \(#file) \(#function)")
+                            
+                        }) {
+                            Image(systemName: "person.fill")
+                                .imageScale(.large)
+                        }
+                        .zIndex(1)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
+                        .background(CircleButtonColor.offWithoutBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(moveAndFade(buttonIndex: 2))
+                        .offset(
+                            x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 : CircleButton.diameterWithRadialSpacing.rawValue * 2,
+                            y: 0)
                     }
-                    .zIndex(2)
-                    .frame(
-                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        alignment: .center)
-                    .background(CircleButtonColor.offWithoutBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(moveAndFade(buttonIndex: 1))
-                    .offset(
-                        x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue : CircleButton.diameterWithRadialSpacing.rawValue,
-                        y: 0)
-
-
-                    Button(action: {
-
-                        self.doSomething()
-                        self.cameraButtons.pilotCameraButtonPressed.toggle()
-                        print("Pilot button pressed is \(cameraButtons.pilotCameraButtonPressed) in \(#file) \(#function)")
-
-                    }) {
-                        Image(systemName: "person.fill")
-                            .imageScale(.large)
-                    }
-                    .zIndex(1)
-                    .frame(
-                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        alignment: .center)
-                    .background(CircleButtonColor.offWithoutBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(moveAndFade(buttonIndex: 2))
-                    .offset(
-                        x: horizontalSizeClass == .compact ? CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 : CircleButton.diameterWithRadialSpacing.rawValue * 2,
-                        y: 0)
                 }
             }
         }

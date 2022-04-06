@@ -62,57 +62,60 @@ struct TopRightView: View {
 
                 // Settings buttons
                 if settingsButtons.showSettingsButtons {
+                    
+                    Group {
 
-                    Button(action: {
-
-                        self.doSomething()
-
-                        self.settingsButtons.userInfoButtonPressed.toggle()
-                        print("The settings button pressed is \(settingsButtons.userInfoButtonPressed) in \(#file) \(#function)")
-
-                    }) {
-                        Image(systemName: "person")
-                            .imageScale(.large)
+                        Button(action: {
+                            
+                            self.doSomething()
+                            
+                            self.settingsButtons.userInfoButtonPressed.toggle()
+                            print("The settings button pressed is \(settingsButtons.userInfoButtonPressed) in \(#file) \(#function)")
+                            
+                        }) {
+                            Image(systemName: "person")
+                                .imageScale(.large)
+                        }
+                        .zIndex(2)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
+                        .background(CircleButtonColor.offWithoutBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(moveAndFade(buttonIndex: 1))
+                        .offset(
+                            x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue ) : -( CircleButton.diameterWithRadialSpacing.rawValue ),
+                            y: 0)
+                        
+                        
+                        
+                        // Settings button
+                        Button(action: {
+                            
+                            self.doSomething()
+                            
+                            self.settingsButtons.settingsButtonPressed.toggle()
+                            print("The settings button pressed is \(settingsButtons.settingsButtonPressed) in \(#file) \(#function)")
+                            
+                        }) {
+                            Image(systemName: "gearshape.2.fill")
+                                .imageScale(.large)
+                        }
+                        .zIndex(1)
+                        .frame(
+                            width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
+                            alignment: .center)
+                        .background(CircleButtonColor.offWithoutBackground.rawValue)
+                        .clipShape(Circle())
+                        .background(Capsule().stroke(Color.blue, lineWidth: 1))
+                        .transition(moveAndFade(buttonIndex: 2))
+                        .offset(
+                            x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 ) : -( CircleButton.diameterWithRadialSpacing.rawValue * 2 ),
+                            y: 0)
                     }
-                    .zIndex(2)
-                    .frame(
-                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        alignment: .center)
-                    .background(CircleButtonColor.offWithoutBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(moveAndFade(buttonIndex: 1))
-                    .offset(
-                        x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue ) : -( CircleButton.diameterWithRadialSpacing.rawValue ),
-                        y: 0)
-
-
-
-                    // Settings button
-                    Button(action: {
-
-                        self.doSomething()
-
-                        self.settingsButtons.settingsButtonPressed.toggle()
-                        print("The settings button pressed is \(settingsButtons.settingsButtonPressed) in \(#file) \(#function)")
-
-                    }) {
-                        Image(systemName: "gearshape.2.fill")
-                            .imageScale(.large)
-                    }
-                    .zIndex(1)
-                    .frame(
-                        width: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        height: horizontalSizeClass == .compact ? CircleButton.diameterCompact.rawValue : CircleButton.diameter.rawValue,
-                        alignment: .center)
-                    .background(CircleButtonColor.offWithoutBackground.rawValue)
-                    .clipShape(Circle())
-                    .background(Capsule().stroke(Color.blue, lineWidth: 1))
-                    .transition(moveAndFade(buttonIndex: 2))
-                    .offset(
-                        x: horizontalSizeClass == .compact ? -( CircleButton.diameterWithRadialSpacingCompact.rawValue * 2 ) : -( CircleButton.diameterWithRadialSpacing.rawValue * 2 ),
-                        y: 0)
                 }
             }
         }
